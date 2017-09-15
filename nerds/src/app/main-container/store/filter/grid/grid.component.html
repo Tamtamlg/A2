@@ -1,0 +1,10 @@
+<span>Сетка:</span>
+<div class="form-grid">
+  <ul>
+    <li *ngFor="let item of gridList">
+      <input type="radio" name="radio" [id]="item.value">
+      <label [for]="item.value">{{item.label}}</label>
+    </li>
+    
+  </ul>
+</div>

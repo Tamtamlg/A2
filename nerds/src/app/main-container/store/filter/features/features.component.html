@@ -1,0 +1,9 @@
+<span>Особенности:</span>
+<div class="form-features">
+  <ul>
+    <li *ngFor="let item of featureList">
+      <input type="checkbox" [id]="item.value">
+      <label [for]="item.value">{{item.label}}</label>
+    </li>
+  </ul>
+</div>
