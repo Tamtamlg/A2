@@ -165,7 +165,8 @@ body {
   font-style: normal;
   color: #000;
   text-align: center;
-  display: none; }
+  display: none;
+  box-shadow: 0px 0px 15px 3px #555; }
 
 .galery-item:hover .price {
   display: block; }
