@@ -4,14 +4,14 @@
       <li>
         <span>Сортировать:</span>
       </li>
-      <li>
-        <a href="#">По цене</a>
+      <li [ngClass]="{'galery-sort-active': flag === 'sort'}">
+        <a href="javascript:void(0);" (click)="priceSort()">По цене</a>
       </li>
-      <li class="galery-sort-active">
-        <a href="#">По типу</a>
+      <li [ngClass]="{'galery-sort-active': flag === 'type'}">
+        <a href="javascript:void(0);" (click)="typeSort()">По типу</a>
       </li>
-      <li>
-        <a href="#">По функционалу</a>
+      <li [ngClass]="{'galery-sort-active': flag === 'func'}">
+        <a href="javascript:void(0);" (click)="funcSort()">По функционалу</a>
       </li>
     </ul>
   </div>
@@ -31,7 +31,8 @@
       <div class="price">
         <h3>{{item.name}}</h3>
         <p>{{item.title}}</p>
-        <a class="btn" href="#">{{item.price}}</a>
+        <p>Функционал {{item.func}}</p>
+        <a class="btn" href="#">{{item.price}} грн</a>
       </div>
     </div>
 
