@@ -15,7 +15,7 @@ export class GalleryComponent implements OnInit {
 
   public links: GalleryItem[] = LINKS;
 
-  private flag;
+  public flag;
 
   priceSort() {
     this.flag = 'sort';
@@ -71,7 +71,7 @@ let LINKS: GalleryItem[] = [
   {
     imgSrc: './assets/img/galery-1.png',
     name: 'Aviator',
-    title: 'Интернет-магазин с личным кабинетом',
+    title: 'Интернет-магазин',
     price: 5000,
     func: 7,
     type: 'store'
@@ -82,7 +82,7 @@ let LINKS: GalleryItem[] = [
     title: 'Блог',
     price: 4500,
     func: 5,
-    type: 'store'
+    type: 'blog'
   },
   {
     imgSrc: './assets/img/galery-3.png',
