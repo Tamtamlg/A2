@@ -1,6 +1,9 @@
 import {RouterModule} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NouisliderModule } from 'ng2-nouislider';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -36,6 +39,9 @@ import { FeaturesComponent } from './main-container/store/filter/features/featur
 ],
   imports: [
     BrowserModule,
+    FormsModule,
+    NouisliderModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([ 
         { path: "studia", component: StudiaComponent },
         { path: "clients", component: ClientsComponent },
@@ -43,7 +49,8 @@ import { FeaturesComponent } from './main-container/store/filter/features/featur
         { path: "contacts", component: ContactsComponent },
         { path: "cart", component: CartComponent },
         { path: "", redirectTo: "store", pathMatch: "full" }
-    ])
+    ]),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

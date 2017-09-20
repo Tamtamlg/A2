@@ -17,6 +17,8 @@ export class GalleryComponent implements OnInit {
 
   public flag;
 
+  p: number = 1;
+
   priceSort() {
     this.flag = 'sort';
     this.links.sort(function (link1, link2) {
@@ -110,6 +112,54 @@ let LINKS: GalleryItem[] = [
   },
   {
     imgSrc: './assets/img/galery-6.png',
+    name: 'Dovetail',
+    title: 'Лендинг',
+    price: 6000,
+    func: 4,
+    type: 'landing'
+  },
+  {
+    imgSrc: './assets/img/galery-7.png',
+    name: 'Aviator',
+    title: 'Интернет-магазин',
+    price: 5000,
+    func: 7,
+    type: 'store'
+  },
+  {
+    imgSrc: './assets/img/galery-8.png',
+    name: 'Sunset',
+    title: 'Блог',
+    price: 4500,
+    func: 5,
+    type: 'blog'
+  },
+  {
+    imgSrc: './assets/img/galery-9.png',
+    name: 'Forte',
+    title: 'Интернет-магазин',
+    price: 4000,
+    func: 3,
+    type: 'store'
+  },
+  {
+    imgSrc: './assets/img/galery-10.png',
+    name: 'Marquee',
+    title: 'Лендинг',
+    price: 3000,
+    func: 2,
+    type: 'landing'
+  },
+  {
+    imgSrc: './assets/img/galery-11.png',
+    name: 'Avenue',
+    title: 'Лендинг',
+    price: 5000,
+    func: 1,
+    type: 'landing'
+  },
+  {
+    imgSrc: './assets/img/galery-12.png',
     name: 'Dovetail',
     title: 'Лендинг',
     price: 6000,

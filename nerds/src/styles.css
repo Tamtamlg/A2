@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import "~nouislider/distribute/nouislider.min.css";
+
 @font-face {
   font-family: 'symbols-nerds';
   src: url("./assets/fonts/symbols-nerds/symbols-nerds.eot?94604853");
@@ -105,7 +107,7 @@ body {
 
 .galery {
   width: 565px;
-  min-height: 980px;
+  /* min-height: 980px; */
   float: right;
   padding: 10px; }
 
@@ -201,7 +203,7 @@ body {
 .galery-item .price .btn:active {
   background: #b63538; }
 
-.paginnator a {
+/* .paginnator .ngx-pagination li {
   display: inline-block;
   font-size: 12px;
   line-height: 18px;
@@ -216,24 +218,41 @@ body {
   border-radius: 2px;
   margin-right: 10px; }
 
-.paginnator a.page-active {
+.paginnator .ngx-pagination .current {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 18px;
+  vertical-align: top;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 9px 15px;
+  color: #5e5e5e;
+  font-weight: bold;
+  border: 2px solid #f1f1f1;
+  background: #f1f1f1;
+  border-radius: 2px;
+  margin-right: 10px;
   background: #fff; }
 
-.paginnator a:hover {
+.paginnator .ngx-pagination li:hover {
   background: #e5e5e5;
   border: 2px solid #e5e5e5; }
 
-.paginnator a:active {
+.paginnator .ngx-pagination li:active {
   background: #d5d5d5;
   border: none;
   padding: 11px 17px;
   box-shadow: inset 0 2px #b5b5b5; }
 
-.paginnator a.page-active:hover {
+.paginnator .ngx-pagination .current:hover {
   background: #fff;
   border: 2px solid #f1f1f1;
   box-shadow: 0 0 #fff;
   cursor: default; }
+
+  .ngx-pagination a, .ngx-pagination button {
+    padding: 9px 15px;
+} */
 
 
 .range-filter {
@@ -244,7 +263,7 @@ body {
   position: relative;
   height: 80px;
   margin-bottom: 15px;
-  padding: 0 30px;
+  padding: 0 20px;
   background: #f1f1f1;
   border-radius: 5px;
   overflow: hidden; }
@@ -587,3 +606,19 @@ body {
 .modal-content-show {
   display: block; }
 
+  .noUi-connect {
+    background: #00ca74;
+}
+
+.noUi-horizontal .noUi-handle:focus {
+  outline: none;
+}
+
+nouislider {
+  width: 100%;
+}
+
+.range-controls {
+  display: flex;
+  align-items: center;
+}

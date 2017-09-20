@@ -1,13 +1,11 @@
 <span>Стоимость:</span>
 <div class="range-filter">
   <div class="range-controls">
-    <div class="scale">
-      <div style="margin-left:50px;width:100px;" class="bar"></div>
-    </div>
-    <div class="toggle min-toggle"></div>
-    <div class="toggle max-toggle"></div>
+    <nouislider [connect]="true" [min]="0" [max]="10000" [step]="1" [(ngModel)]="someRange"></nouislider>
   </div>
   <div class="price-controls">
-    от <input class="min-price" type="text" value="5 000"> до <input class="max-price" type="text" value="15 000">
+    от <input class="min-price" type="text" [(ngModel)]="someRange[0]" readonly> до <input class="max-price" type="text"
+      [(ngModel)]="someRange[1]" readonly>
   </div>
+
 </div>

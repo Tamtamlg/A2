@@ -21,7 +21,7 @@
   </div>
   <div class="galery-container clearfix">
 
-    <div class="galery-item" *ngFor="let item of links">
+    <div class="galery-item" *ngFor="let item of links| paginate: { itemsPerPage: 4, currentPage: p }">
       <div class="circle">
         <i></i>
         <i></i>
@@ -37,11 +37,21 @@
     </div>
 
     <div class="paginnator">
-      <a href="#">Предыдущая</a>
+      <!-- <a href="#">Предыдущая</a>
       <a href="#" class="page-active">1</a>
       <a href="#">2</a>
       <a href="#">3</a>
-      <a href="#">Следующая</a>
+      <a href="#">Следующая</a> -->
+
+      
+                 
+    <pagination-controls 
+      previousLabel="Назад"
+      nextLabel="Вперед" 
+      maxSize="3"
+      (pageChange)="p = $event">
+    </pagination-controls>
+
     </div>
   </div>
 </div>
