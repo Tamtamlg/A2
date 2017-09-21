@@ -2,7 +2,7 @@ import {RouterModule} from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NouisliderModule } from 'ng2-nouislider';
+import { NouisliderModule } from 'ng2-nouislider/src/nouislider';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';

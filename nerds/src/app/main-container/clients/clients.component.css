@@ -1,3 +1,20 @@
-p {
-    color: lightcoral;
-}
+.partners {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 35px;
+    padding-top: 35px;
+    padding-left: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    border-top: 2px solid #eee; }
+  
+  .partners a {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 120px;
+    opacity: .2; }
+  
+  .partners a:nth-child(3) {
+    margin-right: 0; }
+  
+  .partners a:hover {
+    opacity: 1; }
