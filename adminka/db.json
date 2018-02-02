@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "vitaliy@altsolution.net",
+      "password": "password",
+      "name": "Администратор"
+    }
+  ]
+}
