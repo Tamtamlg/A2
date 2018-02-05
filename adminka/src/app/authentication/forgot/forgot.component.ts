@@ -10,15 +10,16 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class ForgotComponent implements OnInit {
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.form = this.fb.group ( {
-      uname: [null , Validators.compose ( [ Validators.required ] )]
-    } );
+    this.form = new FormGroup({
+      'email': new FormControl(null, [Validators.required, Validators.email])
+    });
   }
 
   onSubmit() {
-    this.router.navigate ( [ '/' ] );
+    // добавить отправку email на сервер 
+    this.router.navigate(['./authentication/signin']);
   }
 }
