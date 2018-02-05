@@ -7,6 +7,8 @@ import { MenuItems } from '../../shared/menu-items/menu-items';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { TranslateService } from '@ngx-translate/core';
+import { User } from '../../shared/models/user.model';
+import { AuthService } from '../../shared/services/auth.service';
 
 const SMALL_WIDTH_BREAKPOINT = 991;
 
@@ -25,6 +27,8 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private _router: Subscription;
   private mediaMatcher: MediaQueryList = matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
+
+  user: User;
 
   currentLang = 'en';
   options: Options;
@@ -47,6 +51,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
     public translate: TranslateService,
     private modalService: NgbModal,
     private titleService: Title,
+    private authService: AuthService,
     private zone: NgZone) {
     const browserLang: string = translate.getBrowserLang();
     translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
@@ -65,6 +70,8 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
       document.querySelector('.main-content').scrollTop = 0;
       this.runOnRouteChange();
     });
+
+    this.user = JSON.parse(window.localStorage.getItem('user'));
   }
 
   ngAfterViewInit(): void  {
@@ -122,5 +129,10 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
         {state: 'menu', name: 'MENU'}
       ]
     });
+  }
+
+  onLogout() {
+    this.authService.logout();
+    this.router.navigate(['./authentication/signin']);
   }
 }

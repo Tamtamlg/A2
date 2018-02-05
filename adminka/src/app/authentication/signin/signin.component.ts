@@ -6,6 +6,7 @@ import { User } from '../../shared/models/user.model';
 import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/services/auth.service';
 import { window } from 'rxjs/operator/window';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -17,10 +18,18 @@ export class SigninComponent implements OnInit {
   public form: FormGroup;
   message: Message;
 
-  constructor(private router: Router, private usersService: UsersService, private authService: AuthService) { }
+  constructor(private router: Router,
+    private usersService: UsersService,
+    private authService: AuthService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.message = new Message('danger', '');
+
+    if (localStorage.getItem('user')) {
+      this.authService.login();
+      this.router.navigate(['']);
+    }
 
     this.form = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -30,9 +39,9 @@ export class SigninComponent implements OnInit {
 
   showMessage(text: string, type: string = 'danger') {
     this.message = new Message(type, text);
-    // window.setTimeout(() => {
-    //   this.message.text = '';
-    // }, 5000);
+    setTimeout(() => {
+      this.message.text = '';
+    }, 5000);
   }
 
   onSubmit() {
@@ -41,19 +50,18 @@ export class SigninComponent implements OnInit {
     this.usersService.getUserByEmail(formData.email).subscribe((user: User) => {
       if (user) {
         if (user.password === formData.password) {
-          // this.message.text = '';
-          // window.localStorage.setItem('user',JSON.stringify(user))
-          // this.authService.login();
-          this.router.navigate ( [ './email' ] );
+          this.message.text = '';
+          localStorage.setItem('user', JSON.stringify(user));
+          this.authService.login();
+          this.router.navigate(['']);
         } else {
-          this.showMessage('Incorrect password')
+          this.showMessage('Incorrect password');
         }
       } else {
-        this.showMessage('Incorrect email')
+        this.showMessage('We can\'t find this email address in our database');
       }
-    })
+    });
 
-    
   }
 
 }

@@ -2,28 +2,16 @@ import { Routes } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
+import { AuthGuard } from './shared/services/auth.guard';
 
 export const AppRoutes: Routes = [
   { path: '',
-  redirectTo: './authentication/signin',
-  pathMatch: 'full'
-},
-  {
-    path: '',
-    component: AuthLayoutComponent,
-    children: [{
-      path: 'authentication',
-      loadChildren: './authentication/authentication.module#AuthenticationModule'
-    }, {
-      path: 'error',
-      loadChildren: './error/error.module#ErrorModule'
-    }, {
-      path: 'landing',
-      loadChildren: './landing/landing.module#LandingModule'
-    }]
-  },{
+    redirectTo: './authentication/signin',
+    pathMatch: 'full'
+  }, {
   path: '',
   component: AdminLayoutComponent,
+  canActivate: [AuthGuard],
   children: [{
     path: '',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
@@ -76,7 +64,18 @@ export const AppRoutes: Routes = [
     path: 'docs',
     loadChildren: './docs/docs.module#DocsModule'
   }]
-},  {
+}, {
+  path: '',
+  component: AuthLayoutComponent,
+  children: [{
+    path: 'authentication',
+    loadChildren: './authentication/authentication.module#AuthenticationModule'
+  }, {
+    path: 'error',
+    loadChildren: './error/error.module#ErrorModule'
+  }]
+},
+{
   path: '**',
   redirectTo: 'error/404'
 }];

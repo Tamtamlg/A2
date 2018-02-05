@@ -1,3 +1,4 @@
+import {AuthGuard} from './shared/services/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -47,7 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarModule.forRoot(),
     AgmCoreModule.forRoot({apiKey: 'YOURAPIKEY'})
   ],
-  providers: [UsersService, AuthService],
+  providers: [UsersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

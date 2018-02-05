@@ -7,10 +7,10 @@ export class AuthService {
 
     logout() {
         this.isAuthenticated = false;
-        window.localStorage.clear();
+        localStorage.clear();
     }
 
     isLoggedIn(): boolean {
-        return this.isAuthenticated
+        return this.isAuthenticated;
     }
 }
