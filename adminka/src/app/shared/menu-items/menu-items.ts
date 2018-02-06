@@ -139,64 +139,64 @@ const MENUITEMS = [
       }
     ]
   },
-  // {
-  //   state: 'taskboard',
-  //   name: 'TASKBOARD',
-  //   type: 'link',
-  //   icon: 'basic-message-txt'
-  // },
-  // {
-  //   state: 'cards',
-  //   name: 'CARDS',
-  //   type: 'sub',
-  //   icon: 'basic-postcard',
-  //   children: [
-  //     {
-  //       state: 'basic',
-  //       name: 'BASIC'
-  //     },
-  //     {
-  //       state: 'portlets',
-  //       name: 'PORTLETS'
-  //     },
-  //     {
-  //       state: 'draggable',
-  //       name: 'DRAGGABLE'
-  //     }
-  //   ]
-  // },
-  // {
-  //   state: 'forms',
-  //   name: 'FORMS',
-  //   type: 'sub',
-  //   icon: 'basic-sheet-pen',
-  //   children: [
-  //     {
-  //       state: 'basic',
-  //       name: 'BASIC'
-  //     },
-  //     {
-  //       state: 'masks',
-  //       name: 'MASKS'
-  //     },
-  //     {
-  //       state: 'editor',
-  //       name: 'EDITOR'
-  //     },
-  //     {
-  //       state: 'validation',
-  //       name: 'VALIDATION'
-  //     },
-  //     {
-  //       state: 'upload',
-  //       name: 'UPLOAD'
-  //     },
-  //     {
-  //       state: 'tree',
-  //       name: 'TREE'
-  //     },
-  //   ]
-  // },
+  {
+    state: 'taskboard',
+    name: 'TASKBOARD',
+    type: 'link',
+    icon: 'basic-message-txt'
+  },
+  {
+    state: 'cards',
+    name: 'CARDS',
+    type: 'sub',
+    icon: 'basic-postcard',
+    children: [
+      {
+        state: 'basic',
+        name: 'BASIC'
+      },
+      {
+        state: 'portlets',
+        name: 'PORTLETS'
+      },
+      {
+        state: 'draggable',
+        name: 'DRAGGABLE'
+      }
+    ]
+  },
+  {
+    state: 'forms',
+    name: 'FORMS',
+    type: 'sub',
+    icon: 'basic-sheet-pen',
+    children: [
+      {
+        state: 'basic',
+        name: 'BASIC'
+      },
+      {
+        state: 'masks',
+        name: 'MASKS'
+      },
+      {
+        state: 'editor',
+        name: 'EDITOR'
+      },
+      {
+        state: 'validation',
+        name: 'VALIDATION'
+      },
+      {
+        state: 'upload',
+        name: 'UPLOAD'
+      },
+      {
+        state: 'tree',
+        name: 'TREE'
+      },
+    ]
+  },
   {
     state: 'tables',
     name: 'TABLES',
@@ -333,88 +333,84 @@ const MENUITEMS = [
       }
     ]
   },
-  // {
-  //   state: 'authentication',
-  //   name: 'AUTHENTICATION',
-  //   type: 'sub',
-  //   icon: 'basic-lock-open',
-  //   children: [
-  //     {
-  //       state: 'signin',
-  //       name: 'SIGNIN'
-  //     },
-  //     {
-  //       state: 'signup',
-  //       name: 'SIGNUP'
-  //     },
-  //     {
-  //       state: 'forgot',
-  //       name: 'FORGOT'
-  //     },
-  //     {
-  //       state: 'lockscreen',
-  //       name: 'LOCKSCREEN'
-  //     },
-  //   ]
-  // },
-  // {
-  //   state: 'error',
-  //   name: 'ERROR',
-  //   type: 'sub',
-  //   icon: 'basic-ban',
-  //   children: [
-  //     {
-  //       state: '404',
-  //       name: '404'
-  //     },
-  //     {
-  //       state: '500',
-  //       name: '500'
-  //     },
-  //     {
-  //       state: '503',
-  //       name: '503'
-  //     }
-  //   ]
-  // },
-  // {
-  //   state: 'calendar',
-  //   name: 'CALENDAR',
-  //   type: 'link',
-  //   icon: 'basic-calendar'
-  // },
-  // {
-  //   state: 'media',
-  //   name: 'MEDIA',
-  //   type: 'sub',
-  //   icon: 'basic-todo-txt',
-  //   children: [
-  //     {
-  //       state: 'grid',
-  //       name: 'GRID'
-  //     },
-  //     {
-  //       state: 'tile',
-  //       name: 'TILE'
-  //     },
-  //     {
-  //       state: 'list',
-  //       name: 'LIST'
-  //     }
-  //   ]
-  // },
-  // {
-  //   state: 'widgets',
-  //   name: 'WIDGETS',
-  //   type: 'link',
-  //   icon: 'software-scale-reduce'
-  // },
-  // {
-  //   state: 'social',
-  //   name: 'SOCIAL',
-  //   type: 'link',
-  //   icon: 'basic-elaboration-message-happy'
-  // },
+  {
+    state: 'authentication',
+    name: 'AUTHENTICATION',
+    type: 'sub',
+    icon: 'basic-lock-open',
+    children: [
+      {
+        state: 'signin',
+        name: 'SIGNIN'
+      },
+      {
+        state: 'pass',
+        name: 'PASS'
+      },
+      {
+        state: 'forgot',
+        name: 'FORGOT'
+      }
+    ]
+  },
+  {
+    state: 'error',
+    name: 'ERROR',
+    type: 'sub',
+    icon: 'basic-ban',
+    children: [
+      {
+        state: '404',
+        name: '404'
+      },
+      {
+        state: '500',
+        name: '500'
+      },
+      {
+        state: '503',
+        name: '503'
+      }
+    ]
+  },
+  {
+    state: 'calendar',
+    name: 'CALENDAR',
+    type: 'link',
+    icon: 'basic-calendar'
+  },
+  {
+    state: 'media',
+    name: 'MEDIA',
+    type: 'sub',
+    icon: 'basic-todo-txt',
+    children: [
+      {
+        state: 'grid',
+        name: 'GRID'
+      },
+      {
+        state: 'tile',
+        name: 'TILE'
+      },
+      {
+        state: 'list',
+        name: 'LIST'
+      }
+    ]
+  },
+  {
+    state: 'widgets',
+    name: 'WIDGETS',
+    type: 'link',
+    icon: 'software-scale-reduce'
+  },
+  {
+    state: 'social',
+    name: 'SOCIAL',
+    type: 'link',
+    icon: 'basic-elaboration-message-happy'
+  },
   {
     state: 'docs',
     name: 'DOCS',

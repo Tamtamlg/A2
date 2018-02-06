@@ -26,10 +26,10 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
     this.message = new Message('danger', '');
 
-    if (localStorage.getItem('user')) {
-      this.authService.login();
-      this.router.navigate(['']);
-    }
+    // if (localStorage.getItem('user')) {
+    //   this.authService.login();
+    //   this.router.navigate(['']);
+    // }
 
     this.form = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -47,18 +47,18 @@ export class SigninComponent implements OnInit {
   onSubmit() {
     const formData = this.form.value;
 
-    this.usersService.getUserByEmail(formData.email).subscribe((user: User) => {
+    this.usersService.getUserByEmail(formData.email, formData.password).subscribe((user: User) => {
       if (user) {
-        if (user.password === formData.password) {
+        
           this.message.text = '';
           localStorage.setItem('user', JSON.stringify(user.email));
           this.authService.login();
           this.router.navigate(['']);
-        } else {
-          this.showMessage('Incorrect password');
-        }
+        
+console.log(user)
+
       } else {
-        this.showMessage('We can\'t find this email address in our database');
+        this.showMessage('Incorrect email or password');
       }
     });
 

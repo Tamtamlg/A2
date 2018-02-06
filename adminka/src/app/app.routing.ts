@@ -5,13 +5,14 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { AuthGuard } from './shared/services/auth.guard';
 
 export const AppRoutes: Routes = [
-  { path: '',
-    redirectTo: './authentication/signin',
-    pathMatch: 'full'
-  }, {
+  {
+  //   path: '',
+  //   redirectTo: './authentication/signin',
+  //   pathMatch: 'full'
+  // }, {
   path: '',
   component: AdminLayoutComponent,
-  canActivate: [AuthGuard],
+  // canActivate: [AuthGuard],
   children: [{
     path: '',
     loadChildren: './dashboard/dashboard.module#DashboardModule'

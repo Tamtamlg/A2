@@ -20,6 +20,6 @@ export class ForgotComponent implements OnInit {
 
   onSubmit() {
     // добавить отправку email на сервер 
-    this.router.navigate(['./authentication/signin']);
+    // this.router.navigate(['./authentication/signin']);
   }
 }
