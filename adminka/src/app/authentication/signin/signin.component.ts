@@ -51,7 +51,7 @@ export class SigninComponent implements OnInit {
       if (user) {
         if (user.password === formData.password) {
           this.message.text = '';
-          localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('user', JSON.stringify(user.email));
           this.authService.login();
           this.router.navigate(['']);
         } else {
