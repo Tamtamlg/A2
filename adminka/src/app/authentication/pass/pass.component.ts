@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormControl, AbstractControl } from '@angular/forms';
-import { UsersService } from '../../shared/services/users.service';
+import { AuthDataService } from '../../shared/services/auth-data.service';
 import { User } from '../../shared/models/user.model';
 import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/services/auth.service';
@@ -19,7 +19,7 @@ export class PassComponent implements OnInit {
   message: Message;
 
   constructor(private router: Router,
-    private usersService: UsersService,
+    private authDataService: AuthDataService,
     private authService: AuthService,
     private route: ActivatedRoute) { }
 
@@ -47,20 +47,7 @@ export class PassComponent implements OnInit {
   onSubmit() {
     const formData = this.form.value;
 
-    // this.usersService.getUserByEmail(formData.email).subscribe((user: User) => {
-    //   if (user) {
-    //     if (user.password === formData.password) {
-    //       this.message.text = '';
-    //       localStorage.setItem('user', JSON.stringify(user.email));
-    //       this.authService.login();
-    //       this.router.navigate(['']);
-    //     } else {
-    //       this.showMessage('Incorrect password');
-    //     }
-    //   } else {
-    //     this.showMessage('We can\'t find this email address in our database');
-    //   }
-    // });
+
 
     this.showMessage('Your password has been changed successfully');
     console.log(this.form);

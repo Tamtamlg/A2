@@ -6,13 +6,23 @@ import { AuthGuard } from './shared/services/auth.guard';
 
 export const AppRoutes: Routes = [
   {
-  //   path: '',
-  //   redirectTo: './authentication/signin',
-  //   pathMatch: 'full'
-  // }, {
+    path: '',
+    redirectTo: './authentication/signin',
+    pathMatch: 'full'
+  }, {
+    path: 'authentication',
+    component: AuthLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: './authentication/authentication.module#AuthenticationModule'
+    }, {
+      path: 'error',
+      loadChildren: './error/error.module#ErrorModule'
+    }]
+  }, {
   path: '',
   component: AdminLayoutComponent,
-  // canActivate: [AuthGuard],
+  canActivate: [AuthGuard],
   children: [{
     path: '',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
@@ -66,18 +76,8 @@ export const AppRoutes: Routes = [
     loadChildren: './docs/docs.module#DocsModule'
   }]
 }, {
-  path: '',
-  component: AuthLayoutComponent,
-  children: [{
-    path: 'authentication',
-    loadChildren: './authentication/authentication.module#AuthenticationModule'
-  }, {
-    path: 'error',
-    loadChildren: './error/error.module#ErrorModule'
-  }]
-},
-{
   path: '**',
-  redirectTo: 'error/404'
+  redirectTo: 'error/404',
+  pathMatch: 'full'
 }];
 
