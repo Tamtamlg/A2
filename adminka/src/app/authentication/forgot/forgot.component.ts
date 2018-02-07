@@ -1,6 +1,8 @@
+import {SendDataService} from '../../shared/services/send-data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Message } from '../../shared/models/message.model';
 
 @Component({
   selector: 'app-forgot',
@@ -10,16 +12,32 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class ForgotComponent implements OnInit {
 
   public form: FormGroup;
-  constructor(private router: Router) {}
+  message: Message;
+
+  constructor(
+    private router: Router,
+    private forgotPasswordService: SendDataService) {}
 
   ngOnInit() {
+    this.message = new Message('success', '');
+
     this.form = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email])
     });
   }
 
+  showMessage(text: string, type: string = 'success') {
+    this.message = new Message(type, text);
+  }
+
   onSubmit() {
-    // добавить отправку email на сервер 
-    this.router.navigate(['./authentication/signin']);
+    
+    const formData = this.form.value;
+
+    this.forgotPasswordService.sendData(formData.email);
+
+    this.showMessage('Your password reset link has been sent to you. Please check your inbox.');
+
+    this.form.reset();
   }
 }

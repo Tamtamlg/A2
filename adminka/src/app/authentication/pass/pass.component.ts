@@ -7,6 +7,7 @@ import { Message } from '../../shared/models/message.model';
 import { AuthService } from '../../shared/services/auth.service';
 import { window } from 'rxjs/operator/window';
 import { ActivatedRoute } from '@angular/router';
+import { SendDataService } from '../../shared/services/send-data.service';
 
 @Component({
   selector: 'app-pass',
@@ -21,7 +22,8 @@ export class PassComponent implements OnInit {
   constructor(private router: Router,
     private authDataService: AuthDataService,
     private authService: AuthService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private resetPasswordService: SendDataService) { }
 
   ngOnInit() {
     this.message = new Message('success', '');
@@ -47,10 +49,9 @@ export class PassComponent implements OnInit {
   onSubmit() {
     const formData = this.form.value;
 
-
+    this.resetPasswordService.sendData(formData.password);
 
     this.showMessage('Your password has been changed successfully');
-    console.log(this.form);
 
   }
 

@@ -9,11 +9,17 @@
       "id": 2,
       "email": "2@2",
       "password": "2"
+    },
+    {
+      "email": "3@3",
+      "password": "qwerty",
+      "id": 3
     }
   ],
   "authentication": [
     {
-      "auth": true
+      "auth": true,
+      "code": 0
     }
   ]
 }

@@ -10,16 +10,6 @@ export const AppRoutes: Routes = [
     redirectTo: './authentication/signin',
     pathMatch: 'full'
   }, {
-    path: 'authentication',
-    component: AuthLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: './authentication/authentication.module#AuthenticationModule'
-    }, {
-      path: 'error',
-      loadChildren: './error/error.module#ErrorModule'
-    }]
-  }, {
   path: '',
   component: AdminLayoutComponent,
   canActivate: [AuthGuard],
@@ -76,8 +66,17 @@ export const AppRoutes: Routes = [
     loadChildren: './docs/docs.module#DocsModule'
   }]
 }, {
+  path: '',
+  component: AuthLayoutComponent,
+  children: [{
+    path: 'authentication',
+    loadChildren: './authentication/authentication.module#AuthenticationModule'
+  }, {
+    path: 'error',
+    loadChildren: './error/error.module#ErrorModule'
+  }]
+}, {
   path: '**',
-  redirectTo: 'error/404',
-  pathMatch: 'full'
+  redirectTo: 'error/404'
 }];
 

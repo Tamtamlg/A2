@@ -19,6 +19,7 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthDataService } from './shared/services/auth-data.service';
 import { AuthService } from './shared/services/auth.service';
+import { SendDataService } from './shared/services/send-data.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -48,7 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
     SidebarModule.forRoot(),
     AgmCoreModule.forRoot({apiKey: 'YOURAPIKEY'})
   ],
-  providers: [AuthDataService, AuthService, AuthGuard],
+  providers: [AuthDataService, AuthService, AuthGuard, SendDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
