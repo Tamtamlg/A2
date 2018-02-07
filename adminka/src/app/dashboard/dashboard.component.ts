@@ -64,7 +64,7 @@ export class DashboardComponent {
     Object.assign(this, {
       single
     });
-    this.dateData = generateData(5, false);
+    this.dateData = generateData(1, false);
   }
 
   select(data) {

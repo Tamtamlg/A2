@@ -11,7 +11,7 @@
           Enter new password
         </label>
         <input type="password" class="form-control" placeholder="********" [formControlName]="'password'" [ngClass]="{'form-control-danger': form.get('password').invalid && form.get('password').touched}"/>
-        <div class="form-control-feedback" *ngIf="form.get('password').invalid && form.get('password').touched">Password is required</div>
+        <div class="form-control-feedback" *ngIf="form.get('password').invalid && form.get('password').touched">Minimum password length 8 characters</div>
       </fieldset>
       <fieldset class="form-group" [ngClass]="{'has-danger': form.get('password').value !== form.get('confirmPassword').value && form.get('confirmPassword').touched}">
         <label for="password" class="form-control-label">

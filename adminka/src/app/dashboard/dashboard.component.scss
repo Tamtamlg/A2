@@ -1,5 +1,5 @@
 .line-container {
-  height: 300px;
+  height: 200px;
   width: 100%;
   display: block;
 }
@@ -7,4 +7,8 @@
   height: 300px;
   width: 100%;
   display: block;
+}
+
+.table-bordered thead th, .table-bordered thead td {
+  border-bottom-width: 1px;
 }

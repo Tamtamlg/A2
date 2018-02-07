@@ -29,7 +29,7 @@ export class PassComponent implements OnInit {
     this.message = new Message('success', '');
 
     this.form = new FormGroup({
-      'password': new FormControl(null, [Validators.required]),
+      'password': new FormControl(null, [Validators.required, Validators.minLength(8)]),
       'confirmPassword': new FormControl(null, [Validators.required])
     }, this.passwordConfirmValidator);
   }
@@ -48,6 +48,8 @@ export class PassComponent implements OnInit {
 
   onSubmit() {
     const formData = this.form.value;
+
+    console.log(this.form)
 
     this.resetPasswordService.sendData(formData.password);
 

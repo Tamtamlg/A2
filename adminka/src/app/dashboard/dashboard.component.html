@@ -56,140 +56,134 @@
     </div>
   </div>
 </div>
-<!-- <div class="row">
-  <div class="col-lg-6">
+<div class="row">
+  <div class="col-lg-5">
     <div class="card">
       <div class="card-header no-shadow">
         <div class="card-header-text w-100">
           <div class="card-title">
-            GDP Per Capita
-          </div>
-          <div class="card-subtitle text-capitalize ff-sans">
-            Last updated: 1 hour ago
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="row text-center">
-          <div class="col-xs-6 col-sm-3 text-success">
-            <h5 class="mb-0">
-              <strong>
-                34.45B
-              </strong>
-            </h5>
-            <small>
-              Income
-            </small>
-          </div>
-          <div class="col-xs-6 col-sm-3">
-            <h5 class="mb-0">
-              <strong>
-                34%
-              </strong>
-            </h5>
-            <small>
-              Growth
-            </small>
-          </div>
-          <div class="col-xs-6 col-sm-3 text-danger">
-            <h5 class="mb-0">
-              <strong>
-                45%
-              </strong>
-            </h5>
-            <small>
-              GNI
-            </small>
-          </div>
-          <div class="col-xs-6 col-sm-3">
-            <h5 class="mb-0">
-              <strong>
-                4.56M
-              </strong>
-            </h5>
-            <small>
-              Aid Flows
-            </small>
+            Alarm messages
           </div>
         </div>
       </div>
       <div class="mb-1">
-        <ngx-charts-area-chart-stacked (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve"
-          [gradient]="gradient" [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme"
-          [schemeType]="schemeType" [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-          [timeline]="timeline" [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis"
-          [yAxisLabel]="yAxisLabel" class="line-container">
-        </ngx-charts-area-chart-stacked>
+        <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
+          [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
+          [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
+          [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis" [yAxisLabel]="yAxisLabel"
+          class="line-container">
+        </ngx-charts-line-chart>
+      </div>
+      <div class="table-responsive p-1">
+        <table class="table table-bordered text-center mb-0 ">
+          <thead>
+            <tr>
+              <th>
+                15 min
+              </th>
+              <th>
+                1 hour
+              </th>
+              <th>
+                24 hour
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                1 325
+              </td>
+              <td>
+                4 500
+              </td>
+              <td>
+                84 532
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  <div class="col-lg-6">
+  <div class="col-lg-5">
     <div class="card">
       <div class="card-header no-shadow">
         <div class="card-header-text w-100">
           <div class="card-title">
-            Country spending
-          </div>
-          <div class="card-subtitle text-capitalize ff-sans">
-            Last updated: 1 hour ago
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="row text-center">
-          <div class="col-sm-6 col-md-3 text-purple">
-            <h5 class="mb-0">
-              <strong>
-                34.45B
-              </strong>
-            </h5>
-            <small>
-              Health
-            </small>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <h5 class="mb-0">
-              <strong>
-                21.78B
-              </strong>
-            </h5>
-            <small>
-              Education
-            </small>
-          </div>
-          <div class="col-sm-6 col-md-3 text-indigo">
-            <h5 class="mb-0">
-              <strong>
-                2.89M
-              </strong>
-            </h5>
-            <small>
-              Research
-            </small>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <h5 class="mb-0">
-              <strong>
-                34.76B
-              </strong>
-            </h5>
-            <small>
-              Food
-            </small>
+            Average hashrate TH/s
           </div>
         </div>
       </div>
       <div class="mb-1">
-        <ngx-charts-gauge (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [angleSpan]="gaugeAngleSpan"
-          [bigSegments]="gaugeLargeSegments" [legend]="showLegend" [margin]="margin ? [marginTop, marginRight, marginBottom, marginLeft] : null"
-          [max]="gaugeMax" [min]="gaugeMin" [results]="single" [scheme]="colorScheme" [showAxis]="gaugeShowAxis" [smallSegments]="gaugeSmallSegments"
-          [startAngle]="gaugeStartAngle" [textValue]="gaugeTextValue" [tooltipDisabled]="tooltipDisabled" [units]="gaugeUnits"
-          class="gauge-container">
-        </ngx-charts-gauge>
+        <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
+          [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
+          [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
+          [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis" [yAxisLabel]="yAxisLabel"
+          class="line-container">
+        </ngx-charts-line-chart>
+      </div>
+      <div class="table-responsive p-1">
+        <table class="table table-bordered text-center mb-0 ">
+          <thead>
+            <tr>
+              <th>
+                15 min
+              </th>
+              <th>
+                1 hour
+              </th>
+              <th>
+                24 hour
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                1 325
+              </td>
+              <td>
+                4 500
+              </td>
+              <td>
+                84 532
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-</div> -->
+
+  <div class="col-lg-2">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          <div class="card-title">
+            Alive
+          </div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
+          [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
+          [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
+          [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis" [yAxisLabel]="yAxisLabel"
+          class="line-container">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+      
+        
+  </div>
+</div>
+
 <!-- <div class="row">
   <div class="col-lg-5">
     <div class="card">
