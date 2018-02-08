@@ -18,4 +18,5 @@ export class AuthDataService {
         return this.http.get(`http://localhost:3000/authentication?email=${email}&password=${password}`)
             .map((response) => response[0] ? response[0] : undefined);
     }
+
 }

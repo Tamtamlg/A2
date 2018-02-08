@@ -26,12 +26,32 @@ input[name="filterDates"] {
 .icon-basic-calendar {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 7px;
   width: 25px;
   font-size: 20px;
+  line-height: 14px;
 }
 
-.filtersFomr .card-header {
-  text-transform: none;
-  align-items: baseline;
+.filtersFomr {
+  .card-header {
+    text-transform: none;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .card-body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .row:not(:last-child) {
+    border-bottom: 1px solid #ececec;
+  }
+  .card {
+    margin-bottom: 0;
+  }
+}
+
+.w-auto {
+  width: auto;
 }
