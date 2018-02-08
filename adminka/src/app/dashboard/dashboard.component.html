@@ -179,8 +179,65 @@
 
 <div class="row">
   <div class="col-lg-12">
-      
-        
+    <form class="card filtersFomr">
+      <div class="card-header">
+        <h6 class="mr-3">Filter</h6>
+        <div>
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="radio" type="radio" class="custom-control-input" checked>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">All</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio2" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Active</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio3" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Inactive</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio4" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Alarm</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio5" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Favourites</span>
+          </label>
+        </div>
+
+        <div class="input-wrapper">
+          <label>Date Time Range:</label>
+          <input [(ngModel)]="selectedMoments" [selectMode]="'range'" [owlDateTimeTrigger]="dtPicker3" [owlDateTime]="dtPicker3" name="filterDates">
+          <span class="trigger" [owlDateTimeTrigger]="dtPicker3">
+            <i class="icon icon-basic-calendar"></i>
+          </span>
+          <owl-date-time #dtPicker3></owl-date-time>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Apply</button>
+
+      </div>
+      <div class="card-body">
+
+        <div id="collapseExample" [ngbCollapse]="!isCollapsed">
+          <div class="card">
+            <div>You can collapse this card by clicking Toggle.
+              <br/> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+              officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+              moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+              keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+              vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+              heard of them accusamus labore sustainable VHS.</div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Toggle</button>
+      </div>
+    </form>
   </div>
 </div>
 

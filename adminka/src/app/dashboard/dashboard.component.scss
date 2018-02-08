@@ -3,12 +3,35 @@
   width: 100%;
   display: block;
 }
+
 .gauge-container {
   height: 300px;
   width: 100%;
   display: block;
 }
 
-.table-bordered thead th, .table-bordered thead td {
+.table-bordered thead th,
+.table-bordered thead td {
   border-bottom-width: 1px;
+}
+
+input[name="filterDates"] {
+  width: 280px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.icon-basic-calendar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25px;
+  font-size: 20px;
+}
+
+.filtersFomr .card-header {
+  text-transform: none;
+  align-items: baseline;
 }

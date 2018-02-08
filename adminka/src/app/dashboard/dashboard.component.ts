@@ -1,10 +1,12 @@
+import * as moment from 'moment';
 import { Component } from '@angular/core';
 import * as shape from 'd3-shape';
-import { colorSets  } from '@swimlane/ngx-charts/release/utils/color-sets';
+import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
 import {
   single,
   generateData
 } from '../shared/chartData';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -33,7 +35,7 @@ export class DashboardComponent {
   roundDomains = false;
   colorScheme = {
     domain: [
-    '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
+      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
     ]
   };
   schemeType = 'ordinal';
@@ -60,7 +62,10 @@ export class DashboardComponent {
   gaugeValue = 50; // linear gauge value
   gaugePreviousValue = 70;
 
+  public selectedMoments = [new Date(), new Date()];
+
   constructor() {
+
     Object.assign(this, {
       single
     });
@@ -74,4 +79,6 @@ export class DashboardComponent {
   onLegendLabelClick(entry) {
     console.log('Legend clicked', entry);
   }
+
+
 }
