@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="col-sm-6 col-md-3">
-    <div class="card card-body card-widget">
+    <a role="button" class="card card-body card-widget">
       <div class="widget-icon rounded-circle bg-red text-white">!
       </div>
       <div class="block ml-3 mr-3">
@@ -53,7 +53,7 @@
           <strong>Alarm</strong>
         </small>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 <div class="row">
@@ -75,7 +75,7 @@
         </ngx-charts-line-chart>
       </div>
       <div class="table-responsive p-1">
-        <table class="table table-bordered text-center mb-0 ">
+        <table class="table table-bordered text-center mb-0 table-sm">
           <thead>
             <tr>
               <th>
@@ -130,7 +130,7 @@
         </ngx-charts-line-chart>
       </div>
       <div class="table-responsive p-1">
-        <table class="table table-bordered text-center mb-0 ">
+        <table class="table table-bordered text-center mb-0 table-sm">
           <thead>
             <tr>
               <th>
@@ -217,7 +217,6 @@
         </div>
 
         <div class="input-wrapper mr-3">
-          <label>Date Time Range: &nbsp;</label>
           <input [(ngModel)]="selectedMoments" [selectMode]="'range'" [owlDateTimeTrigger]="dtPicker3" [owlDateTime]="dtPicker3" name="filterDates"
             class="form-control d-inline-block">
           <span class="trigger" [owlDateTimeTrigger]="dtPicker3">
@@ -228,8 +227,7 @@
 
         <button type="submit" class="btn btn-primary">Apply</button>
 
-        <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
-          aria-controls="collapseExample">Toggle</button>
+        <button type="button" class="btn btn-outline-dark" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">Toggle</button>
 
       </div>
       <div class="card-body">
@@ -374,340 +372,636 @@
   </div>
 </div>
 
-<!-- <div class="row">
-  <div class="col-lg-5">
-    <div class="card">
-      <div class="card-header no-shadow">
-        <div class="card-header-text w-100">
-          <div class="card-title">
-            Social Feed
-          </div>
-          <div class="card-subtitle text-capitalize ff-sans">
-            Last updated: 1 hour ago
-          </div>
-        </div>
-      </div>
-      <div class="activity-stream">
-        <div class="card">
-          <div class="card-header">
-            <img class="card-avatar" src="assets/images/face1.jpg"/>
-            <div class="card-header-text">
-              <div class="card-title">
-                Received a call from Joel
-              </div>
-              <div class="card-subtitle">
-                at 3:14PM
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <img class="card-avatar" src="assets/images/face2.jpg"/>
-            <div class="card-header-text">
-              <div class="card-title">
-                Added Ellie to Group
-              </div>
-              <div class="card-subtitle">
-                5 mins ago
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="mb-0">
-              Nullam id dolor id nibh ultricies vehicula ut id elit.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3">
-    <div class="card bg-purple card-inverse">
-      <div class="card-header">
-        Todos
-      </div>
-      <div class="card-body">
-        <ul class="list-unstyled mb-0">
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Learn Angular 4
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Update Vue.JS
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox">
-              <input class="custom-control-input" type="checkbox">
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Add ReactJS
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Upgrade Ember
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox mb-2">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Read on Meteor
-              </span>
-            </label>
-          </li>
-          <li>
-            <label class="custom-control custom-checkbox">
-              <input class="custom-control-input" type="checkbox"/>
-              <span class="custom-control-indicator">
-              </span>
-              <span class="custom-control-description">
-                Commit Riot changes
-              </span>
-            </label>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="card no-bg">
-      <div class="card-body text-center rounded" style="background-image: url('assets/images/unsplash/2.jpg')">
-        <img alt="" class="avatar-lg rounded-circle d-block mx-auto mb-3" src="assets/images/face4.jpg"/>
-        <button class="btn btn-secondary btn-sm mb-3">
-          Follow
-        </button>
-      </div>
-      <div class="card-body pt-3 pb-3 ml-3 mr-3 bg-indigo text-white rounded" style="margin-top: -15px;">
-        <div class="row text-center">
-          <div class="col">
-            <div class="h6 no-margin">
-              62
-            </div>
-            <div class="small bold text-uppercase">
-              Followers
-            </div>
-          </div>
-          <div class="col">
-            <div class="h6 no-margin">
-              98
-            </div>
-            <div class="small bold text-uppercase">
-              Posts
-            </div>
-          </div>
-          <div class="col">
-            <div class="h6 no-margin">
-              29
-            </div>
-            <div class="small bold text-uppercase">
-              Likes
-            </div>
-          </div>
-        </div>
+<div class="row">
+  <div class="col">
+    <button type="button" class="btn btn-outline-dark mb-2">Export CSV</button>
+    <div class="card w-100">
+      <div class="table-responsive">
+        <table class="table table-sm dashboard-table">
+          <tbody>
+            <tr>
+              <td rowspan="2">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                </label>
+              </td>
+              <td rowspan="2" class="toggler">
+                <i class="icon icon-arrows-down" aria-hidden="true"></i>
+              </td>
+              <td rowspan="2">
+                HostName
+              </td>
+              <td rowspan="2">
+                Type
+              </td>
+              <td colspan="4" class="text-center">
+                HashRate, TH/s
+              </td>
+              <td>
+                Clock,
+              </td>
+              <td rowspan="2">
+                Build
+              </td>
+              <td rowspan="2">
+                Uptime
+              </td>
+              <td rowspan="2">
+                Alarms
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                15MIN
+              </td>
+              <td>
+                1H
+              </td>
+              <td>
+                1D
+              </td>
+              <td>
+                AVG
+              </td>
+              <td>
+                GHz
+              </td>
+            </tr>
+
+            <tr>
+              <td scope="row">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                </label>
+              </td>
+              <td class="toggler">
+                <i class="icon icon-arrows-down" aria-hidden="true"></i>
+              </td>
+              <td>
+                <label>
+                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                </label>
+                <i class="fa fa-area-chart ml-1"></i>
+              </td>
+              <td>
+                X5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                5,5
+              </td>
+              <td>
+                2.34F
+              </td>
+              <td>
+                125 16:25:11
+              </td>
+              <td>
+                3-U, 10-T, 1-I
+              </td>
+            </tr>
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+              <td colspan="12">
+                <div style="background: red; padding: 10px">
+
+                  <table class="table table-sm dashboard-table-2">
+                    <tbody>
+                      <tr>
+
+                        <td rowspan="2" class="toggler">
+
+                        </td>
+                        <td rowspan="2">
+                          Name
+                        </td>
+                        <td rowspan="2">
+                          Boards
+                        </td>
+                        <td colspan="4" class="text-center">
+                          HashRate, TH/s
+                        </td>
+
+                        <td rowspan="2">
+                          Version
+                        </td>
+                        <td rowspan="2">
+                          Uptime
+                        </td>
+                        <td rowspan="2">
+                          Alarms
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          15MIN
+                        </td>
+                        <td>
+                          1H
+                        </td>
+                        <td>
+                          1D
+                        </td>
+                        <td>
+                          AVG
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="toggler">
+                          <i class="icon icon-arrows-down" aria-hidden="true"></i>
+                        </td>
+                        <td>
+                          Hector4
+                          <i class="fa fa-area-chart ml-1"></i>
+                          <td>
+                            X5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            2.34F
+                          </td>
+                          <td>
+                            125 16:25:11
+                          </td>
+                          <td>
+                            3-U, 10-T, 1-I
+                          </td>
+                      </tr>
+                      <tr>
+                        <td class="toggler">
+                          <i class="icon icon-arrows-down" aria-hidden="true"></i>
+                        </td>
+                        <td>
+                          Hector4
+                          <i class="fa fa-area-chart ml-1"></i>
+                          <td>
+                            X5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            2.34F
+                          </td>
+                          <td>
+                            125 16:25:11
+                          </td>
+                          <td>
+                            3-U, 10-T, 1-I
+                          </td>
+                      </tr>
+                      <tr>
+                        <td class="toggler">
+                          <i class="icon icon-arrows-down" aria-hidden="true"></i>
+                        </td>
+                        <td>
+                          Hector4
+                          <i class="fa fa-area-chart ml-1"></i>
+                          <td>
+                            X5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            45,5
+                          </td>
+                          <td>
+                            2.34F
+                          </td>
+                          <td>
+                            125 16:25:11
+                          </td>
+                          <td>
+                            3-U, 10-T, 1-I
+                          </td>
+                      </tr>
+                      <!-- *********************************************************************************************************** -->
+                      <tr>
+                        <td colspan="12">
+                          <div style="background: green; padding: 10px">
+
+                            <table class="table table-sm dashboard-table-3">
+                              <tbody>
+                                <tr>
+                                  <td rowspan="2">
+                                    ID
+                                  </td>
+                                  <td rowspan="2">
+                                    ASIC Status
+                                  </td>
+                                  <td rowspan="2">
+                                    ASIC#
+                                  </td>
+                                  <td colspan="4" class="text-center">
+                                    HashRate, TH/s
+                                  </td>
+
+                                  <td rowspan="2">
+                                    Version
+                                  </td>
+
+                                  <td rowspan="2">
+                                    Alarms
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    15MIN
+                                  </td>
+                                  <td>
+                                    1H
+                                  </td>
+                                  <td>
+                                    1D
+                                  </td>
+                                  <td>
+                                    AVG
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">
+                                    <label>
+                                      <input class="star mr-2" type="checkbox" title="Add to favorites"> 985DD08G
+                                    </label>
+                                  </td>
+                                  <td rowspan="2">
+                                    Ooooooooo ooooo oooooooooo
+                                  </td>
+                                  <td>
+                                    125 16:25:11
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    2.34F
+                                  </td>
+
+                                  <td>
+                                    3-U, 10-T, 1-I
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    125 16:25:11
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    2.34F
+                                  </td>
+
+                                  <td>
+                                    3-U, 10-T, 1-I
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    <label>
+                                      <input class="star mr-2" type="checkbox" title="Add to favorites"> 985DD08G
+                                    </label>
+                                  </td>
+                                  <td>
+                                    Ooooooooo ooooo oooooooooo
+                                  </td>
+                                  <td>
+                                    125 16:25:11
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    2.34F
+                                  </td>
+
+                                  <td>
+                                    3-U, 10-T, 1-I
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <label>
+                                      <input class="star mr-2" type="checkbox" title="Add to favorites"> 985DD08G
+                                    </label>
+                                    <td>
+                                      Ooooooooo ooooo oooooooooo
+                                    </td>
+                                    <td>
+                                      125 16:25:11
+                                    </td>
+                                    <td>
+                                      45,5
+                                    </td>
+                                    <td>
+                                      45,5
+                                    </td>
+                                    <td>
+                                      45,5
+                                    </td>
+                                    <td>
+                                      45,5
+                                    </td>
+                                    <td>
+                                      2.34F
+                                    </td>
+
+                                    <td>
+                                      3-U, 10-T, 1-I
+                                    </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          </td>
+                      </tr>
+                      <!-- *********************************************************************************************************** -->
+                    </tbody>
+                  </table>
+                </div>
+                </td>
+            </tr>
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <tr>
+              <td scope="row">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                </label>
+              </td>
+              <td class="toggler">
+                <i class="icon icon-arrows-down" aria-hidden="true"></i>
+              </td>
+              <td>
+                <label>
+                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                </label>
+                <i class="fa fa-area-chart ml-1"></i>
+                <td>
+                  X5
+                </td>
+                <td>
+                  45,5
+                </td>
+                <td>
+                  45,5
+                </td>
+                <td>
+                  45,5
+                </td>
+                <td>
+                  45,5
+                </td>
+                <td>
+                  5,5
+                </td>
+                <td>
+                  2.34F
+                </td>
+                <td>
+                  125 16:25:11
+                </td>
+                <td>
+                  3-U, 10-T, 1-I
+                </td>
+            </tr>
+            <tr>
+              <td scope="row">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                </label>
+              </td>
+              <td class="toggler">
+                <i class="icon icon-arrows-down" aria-hidden="true"></i>
+              </td>
+              <td>
+                <label>
+                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                </label>
+                <i class="fa fa-area-chart ml-1"></i>
+              </td>
+              <td>
+                X5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                5,5
+              </td>
+              <td>
+                2.34F
+              </td>
+              <td>
+                125 16:25:11
+              </td>
+              <td>
+                3-U, 10-T, 1-I
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                </label>
+              </td>
+              <td class="toggler">
+                <i class="icon icon-arrows-down" aria-hidden="true"></i>
+              </td>
+              <td>
+                <label>
+                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                </label>
+                <i class="fa fa-area-chart ml-1"></i>
+              </td>
+              <td>
+                X5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                5,5
+              </td>
+              <td>
+                2.34F
+              </td>
+              <td>
+                125 16:25:11
+              </td>
+              <td>
+                3-U, 10-T, 1-I
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                </label>
+              </td>
+              <td class="toggler">
+                <i class="icon icon-arrows-down" aria-hidden="true"></i>
+              </td>
+              <td>
+                <label>
+                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                </label>
+                <i class="fa fa-area-chart ml-1"></i>
+              </td>
+              <td>
+                X5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                45,5
+              </td>
+              <td>
+                5,5
+              </td>
+              <td>
+                2.34F
+              </td>
+              <td>
+                125 16:25:11
+              </td>
+              <td>
+                3-U, 10-T, 1-I
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
+
 <div class="row">
-  <div class="col-md-12 col-xl-4">
-    <div class="card">
-      <div class="card-header no-shadow">
-        Messages
-      </div>
-      <ul class="list-group border-0">
-        <li class="list-group-item border-top-0 border-left-0 border-right-0">
-          <div class="d-flex align-items-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid rounded-circle" src="assets/images/face1.jpg"/>
-            </a>
-            <div class="pl-3">
-              <a class="d-block" href="javascript:;">
-                Amanda Alvarez
-              </a>
-              <span>
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item border-top-0 border-left-0 border-right-0">
-          <div class="d-flex align-items-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid rounded-circle" src="assets/images/face2.jpg"/>
-            </a>
-            <div class="pl-3">
-              <a class="d-block" href="javascript:;">
-                Debra Kelly
-              </a>
-              <span>
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item border-top-0 border-left-0 border-right-0  border-bottom-0">
-          <div class="d-flex align-items-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid rounded-circle" src="assets/images/face3.jpg"/>
-            </a>
-            <div class="pl-3">
-              <a class="d-block" href="javascript:;">
-                Walter Ryan
-              </a>
-              <span>
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="col">
+    <p>You have selected 25 items</p>
   </div>
-  <div class="col-md-6 col-xl-4">
-    <div class="card bg-indigo card-inverse">
-      <div class="card-header no-shadow">
-        Tweets
-      </div>
-      <div class="list-group">
-        <div class="list-group-item list-group-item-action flex-column align-items-start no-bg text-white">
-          <p class="mb-1 w-100">
-            Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.
-          </p>
-          <div class="d-flex w-100 justify-content-between">
-            <div>
-              <a href="javascript:;" class="text-white">
-                <i class="icon icon-basic-heart">
-                </i>
-              </a>
-              <a href="javascript:;" class="text-white">
-                <i class="icon icon-basic-share mr-3 ml-3">
-                </i>
-              </a>
-            </div>
-            <small>
-              3m
-            </small>
-          </div>
-        </div>
-        <div class="list-group-item list-group-item-action flex-column align-items-start no-bg text-white">
-          <p class="mb-1 w-100">
-            Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.
-          </p>
-          <div class="d-flex w-100 justify-content-between">
-            <div>
-              <a href="javascript:;" class="text-white">
-                <i class="icon icon-basic-heart">
-                </i>
-              </a>
-              <a href="javascript:;" class="text-white">
-                <i class="icon icon-basic-share mr-3 ml-3">
-                </i>
-              </a>
-            </div>
-            <small>
-              3m
-            </small>
-          </div>
-        </div>
-        <div class="list-group-item list-group-item-action flex-column align-items-start no-bg text-white  border-bottom-0">
-          <p class="mb-1 w-100">
-            Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum.
-          </p>
-          <div class="d-flex w-100 justify-content-between">
-            <div>
-              <a href="javascript:;" class="text-white">
-                <i class="icon icon-basic-heart">
-                </i>
-              </a>
-              <a href="javascript:;" class="text-white">
-                <i class="icon icon-basic-share mr-3 ml-3">
-                </i>
-              </a>
-            </div>
-            <small>
-              3m
-            </small>
-          </div>
-        </div>
+</div>
+
+<div class="row clearfix">
+  <div class="col group-action">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-dark group-action-btn" ngbDropdownToggle>Group action</button>
+      <div ngbDropdownMenu>
+        <button class="dropdown-item">
+          <i class="fa fa-gears mr-1"></i> Get log</button>
+        <button class="dropdown-item">
+          <i class="fa fa-gears mr-1"></i> Change pools</button>
+        <button class="dropdown-item">
+          <i class="fa fa-gears mr-1"></i> Change clock settings</button>
+        <button class="dropdown-item">
+          <i class="fa fa-gears mr-1"></i> Cgminer restart</button>
+        <button class="dropdown-item">
+          <i class="fa fa-gears mr-1"></i> Device reboot</button>
+        <button class="dropdown-item">
+          <i class="fa fa-gears mr-1"></i> Show charts</button>
       </div>
     </div>
   </div>
-  <div class="col-md-6 col-xl-4">
-    <div class="card">
-      <div class="card-header no-shadow">
-        News Feed
-      </div>
-      <ul class="list-group border-0">
-        <li class="list-group-item border-left-0 border-right-0">
-          <div class="d-flex justify-content-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid" src="assets/images/face4.jpg"/>
-            </a>
-            <div class="pl-3">
-              <span class="d-block">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-              <small class="text-muted">
-                Yesterday
-              </small>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item border-left-0 border-right-0">
-          <div class="d-flex justify-content-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid" src="assets/images/face5.jpg"/>
-            </a>
-            <div class="pl-3">
-              <span class="d-block">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-              <small class="text-muted">
-                Yesterday
-              </small>
-            </div>
-          </div>
-        </li>
-        <li class="list-group-item border-left-0 border-right-0  border-bottom-0">
-          <div class="d-flex justify-content-center">
-            <a class="pull-left avatar-sm" href="javascript:;">
-              <img class="img-fluid" src="assets/images/face1.jpg">
-            </a>
-            <div class="pl-3">
-              <span class="d-block">
-                Donec ullamcorper nulla non metus auctor fringilla.
-              </span>
-              <small class="text-muted">
-                Yesterday
-              </small>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div> -->
+</div>

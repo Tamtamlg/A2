@@ -26,10 +26,11 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
     this.message = new Message('danger', '');
 
-    // if (localStorage.getItem('user')) {
-    //   this.authDataService.login();
-    //   this.router.navigate(['']);
-    // }
+    // TODO удалить
+    if (localStorage.getItem('user')) {
+      this.authService.login();
+      this.router.navigate(['']);
+    }
 
     this.form = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),

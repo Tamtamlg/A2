@@ -1,3 +1,4 @@
+@import "../../assets/fonts/font-awesome-4.7.0/css/font-awesome.css";
 .line-container {
   height: 200px;
   width: 100%;
@@ -54,4 +55,110 @@ input[name="filterDates"] {
 
 .w-auto {
   width: auto;
+}
+
+.dashboard-table {
+  background: #fcfcfc;
+  margin-bottom: 0;
+  label {
+    margin: 0;
+  }
+  td {
+    vertical-align: middle;
+  }
+  
+  tr:nth-of-type(odd) {
+    background-color: #eee;
+  }
+  tr:nth-of-type(1),
+  tr:nth-of-type(2) {
+    background-color: #fff;
+    td {
+      vertical-align: bottom;
+      font-weight: bold;
+    }
+  }
+  tr:nth-of-type(2) {
+    td {
+      padding-top: 0;
+      padding-bottom: 7px;
+      border: 0;
+    }
+    td:first-child {
+      padding-left: 0.3rem;
+    }
+  }
+  tr:nth-of-type(1) {
+    td {
+      padding-bottom: 7px;
+    }
+    td:nth-child(5),
+    td:nth-child(6),
+    td:nth-child(1),
+    td:nth-child(2) {
+      padding-bottom: 0;
+    }
+    
+  }
+
+  tr td table {
+    margin-bottom: 0;
+    tr:nth-of-type(1),
+    tr:nth-of-type(2) {
+      background-color: transparent;
+      td {
+        vertical-align: bottom;
+        font-weight: bold;
+        padding-bottom: 0;
+      }
+    }
+    tr:nth-of-type(odd) {
+      background-color: transparent;
+    }
+  }
+  .table.dashboard-table-3 {
+    background: lightsteelblue;
+  }
+  .table.dashboard-table-2 {
+    background: lightsalmon;
+  }
+}
+
+.toggler {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.star {
+  visibility: hidden;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.star:before {
+  content: "\2606";
+  visibility: visible;
+  color: #304ffe;
+  position: absolute;
+  top: -12px;
+  left: -3px;
+  font-size: 27px;
+}
+
+.star:checked:before {
+  content: "\2605";
+  color: #304ffe;
+}
+
+.fa-area-chart {
+  font-size: 17px;
+}
+
+.group-action .d-inline-block.show {
+  margin-bottom: 180px;
+}
+
+.group-action-btn {
+  width: 211px;
 }
