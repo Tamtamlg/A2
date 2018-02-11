@@ -8,6 +8,6 @@ export class SendDataService {
     constructor(private http: HttpClient) { }
 
     sendData(data: string): Observable<any> {
-        return this.http.post(`http://localhost:3000/`, data);
+        return this.http.post('assets/api/', data);
     }
 }

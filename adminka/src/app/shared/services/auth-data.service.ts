@@ -8,15 +8,13 @@ import { User } from '../models/user.model';
 export class AuthDataService {
     constructor (private http: HttpClient) {}
 
-    // gatAuthData(email: string, password: string): Observable<User> {
-    //     return this.http.get(`http://localhost:3000/users?email=${email}&password=${password}`)
-    //         .map((user: User[]) => user[0] ? user[0] : undefined);
-    //         // .map((user: User) => user)
+    // gatAuthData(email: string, password: string): Observable<any> {
+    //     return this.http.get(`http://localhost:3000/authentication?email=${email}&password=${password}`)
+    //         .map((response) => response[0] ? response[0] : undefined);
     // }
 
     gatAuthData(email: string, password: string): Observable<any> {
-        return this.http.get(`http://localhost:3000/authentication?email=${email}&password=${password}`)
-            .map((response) => response[0] ? response[0] : undefined);
+        return this.http.get('assets/api/auth.json');
     }
 
 }

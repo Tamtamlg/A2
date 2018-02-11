@@ -66,12 +66,13 @@
           </div>
         </div>
       </div>
-      <div class="mb-1">
+      <div class="mb-1" *ngIf="!isLoaded">Loading...</div>
+      <div class="mb-1" *ngIf="isLoaded">
         <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
           [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
           [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
           [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis" [yAxisLabel]="yAxisLabel"
-          class="line-container">
+          class="line-container" [timeline]="timeline">
         </ngx-charts-line-chart>
       </div>
       <div class="table-responsive p-1">
@@ -121,7 +122,8 @@
           </div>
         </div>
       </div>
-      <div class="mb-1">
+      <div class="mb-1" *ngIf="!isLoaded">Loading...</div>
+      <div class="mb-1" *ngIf="isLoaded">
         <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
           [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
           [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
@@ -171,7 +173,8 @@
           </div>
         </div>
       </div>
-      <div class="mb-1">
+      <div class="mb-1" *ngIf="!isLoaded">Loading...</div>
+      <div class="mb-1" *ngIf="isLoaded">
         <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
           [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
           [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"

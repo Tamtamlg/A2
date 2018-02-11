@@ -1,5 +1,5 @@
 import * as moment from 'moment';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as shape from 'd3-shape';
 import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
 import {
@@ -7,6 +7,7 @@ import {
   generateData
 } from '../shared/chartData';
 import { FormControl } from '@angular/forms';
+import { ChartsDataService } from '../shared/services/carts-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./dashboard.component.scss']
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   single: any[];
   graph: {
     links: any[],
@@ -35,7 +36,7 @@ export class DashboardComponent {
   roundDomains = false;
   colorScheme = {
     domain: [
-      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
+      '#0099cc', '#ffc65d', '#2ECC71', '#4cc3d9', '#d96557', '#ba68c8'
     ]
   };
   schemeType = 'ordinal';
@@ -64,12 +65,25 @@ export class DashboardComponent {
 
   public selectedMoments = [new Date(), new Date()];
 
-  constructor() {
+  isLoaded = false;
+
+  constructor(private chartsDataService: ChartsDataService) {
 
     Object.assign(this, {
       single
     });
-    this.dateData = generateData(1, false);
+
+  }
+
+  ngOnInit() {
+
+    this.chartsDataService.getChartData().subscribe((response) => {
+      this.dateData = response;
+
+      this.isLoaded = true;
+    });
+
+
   }
 
   select(data) {

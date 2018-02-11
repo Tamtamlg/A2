@@ -41,7 +41,7 @@ export class LineComponent {
 
   colorScheme = {
     domain: [
-      '#0099cc', '#2ECC71', '#4cc3d9', '#ffc65d', '#d96557', '#ba68c8'
+      '#0099cc', '#ffc65d', '#2ECC71', '#d96557', '#ba68c8'
     ]
   };
   schemeType = 'ordinal';

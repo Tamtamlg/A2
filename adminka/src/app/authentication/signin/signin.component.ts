@@ -49,7 +49,7 @@ export class SigninComponent implements OnInit {
     const formData = this.form.value;
 
     this.authDataService.gatAuthData(formData.email, formData.password).subscribe((response) => {
-      if (response.auth) {
+      if (response.data.auth) {
           this.message.text = '';
           localStorage.setItem('user', JSON.stringify(formData.email));
           this.authService.login();
@@ -57,6 +57,7 @@ export class SigninComponent implements OnInit {
       } else {
         this.showMessage('Incorrect email or password');
       }
+
     });
 
   }
