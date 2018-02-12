@@ -1,15 +1,19 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+
+
 <div class="row">
   <div class="col-sm-6 col-md-3">
     <div class="card card-body card-widget">
       <div class="widget-icon rounded-circle bg-blue text-white icon icon-basic-server2">
       </div>
-      <div class="block ml-3 mr-3">
+      <div class="block ml-3">
         <h5 class="mb-0 fw-400">
           4500
         </h5>
-        <small class="text-muted text-uppercase ">
+        <span class="text-muted text-uppercase ">
           <strong>Total</strong>
-        </small>
+        </span>
       </div>
     </div>
   </div>
@@ -17,13 +21,13 @@
     <div class="card card-body card-widget">
       <div class="widget-icon rounded-circle bg-green text-white icon icon-arrows-check">
       </div>
-      <div class="block ml-3 mr-3">
+      <div class="block ml-3">
         <h5 class="mb-0 fw-400">
           4400
         </h5>
-        <small class="text-muted text-uppercase ">
+        <span class="text-muted text-uppercase ">
           <strong>Active</strong>
-        </small>
+        </span>
       </div>
     </div>
   </div>
@@ -31,13 +35,13 @@
     <div class="card card-body card-widget">
       <div class="widget-icon rounded-circle bg-teal text-white icon icon-basic-ban">
       </div>
-      <div class="block ml-3 mr-3">
+      <div class="block ml-3">
         <h5 class="mb-0 fw-400">
           50
         </h5>
-        <small class="text-muted text-uppercase ">
+        <span class="text-muted text-uppercase ">
           <strong>Inactive</strong>
-        </small>
+        </span>
       </div>
     </div>
   </div>
@@ -45,17 +49,21 @@
     <a role="button" class="card card-body card-widget">
       <div class="widget-icon rounded-circle bg-red text-white">!
       </div>
-      <div class="block ml-3 mr-3">
+      <div class="block ml-3">
         <h5 class="mb-0 fw-400">
           50
         </h5>
-        <small class="text-muted text-uppercase ">
+        <span class="text-muted text-uppercase ">
           <strong>Alarm</strong>
-        </small>
+        </span>
       </div>
     </a>
   </div>
 </div>
+
+</div>
+</div>
+
 <div class="row">
   <div class="col-lg-4">
     <div class="card">
@@ -239,7 +247,7 @@
           <div class="card">
 
             <div class="row">
-              <div class="col-md-2 d-flex flex-column pt-2 pb-2">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
                 <div class="mt-auto">
                   <input type="text" class="form-control d-inline-block w-auto" placeholder="Hostname">
                 </div>
@@ -247,24 +255,11 @@
               <div class="col-md-4 d-flex flex-column pt-2 pb-2">
                 <h6>Type</h6>
                 <div class="mt-auto">
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">U alarm</span>
-                  </label>
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">I alarm</span>
-                  </label>
-                  <label class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input">
-                    <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">T alarm</span>
-                  </label>
+                  <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" name="multiselectType">
+                  </angular2-multiselect>
                 </div>
               </div>
-              <div class="col-md-6 d-flex flex-column pt-2 pb-2">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
                 <h6>Clock</h6>
                 <div class="mt-auto">
                   <label class="custom-control custom-radio">
@@ -283,14 +278,14 @@
             </div>
 
             <div class="row">
-              <div class="col-md-3 d-flex flex-column pt-2 pb-2">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
                 <h6>Device</h6>
                 <div class="mt-auto">
                   <input type="text" class="form-control d-inline-block w-auto" placeholder="ID">
                 </div>
               </div>
 
-              <div class="col-md-3 d-flex flex-column pt-2 pb-2">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
                 <h6>HashRate</h6>
                 <div class="mt-auto">
                   <label class="custom-control custom-checkbox">
@@ -311,7 +306,7 @@
                 </div>
               </div>
 
-              <div class="col-md-6 d-flex flex-column pt-2 pb-2">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
                 <div class="mt-auto">
                   <label class="custom-control custom-radio">
                     <input id="hashrateRadio1" name="hashrateRadio" type="radio" class="custom-control-input" checked>
@@ -329,7 +324,7 @@
             </div>
 
             <div class="row">
-              <div class="col-md-6 d-flex flex-column pt-2 pb-2">
+              <div class="col-md-8 d-flex flex-column pt-2 pb-2">
                 <h6>Alarm</h6>
                 <div class="mt-auto">
                   <label class="custom-control custom-checkbox">
@@ -349,7 +344,7 @@
                   </label>
                 </div>
               </div>
-              <div class="col-md-6 d-flex flex-column pt-2 pb-2">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
                 <h6>ASIC's</h6>
                 <div class="mt-auto">
                   <label class="custom-control custom-radio">
@@ -445,7 +440,7 @@
               </td>
               <td>
                 <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
                 </label>
                 <i class="fa fa-area-chart ml-1"></i>
               </td>
@@ -669,7 +664,7 @@
                                 <tr>
                                   <td rowspan="2">
                                     <label>
-                                      <input class="star mr-2" type="checkbox" title="Add to favorites"> 985DD08G
+                                      <input class="star mr-2" type="checkbox" title="Add to favourites"> 985DD08G
                                     </label>
                                   </td>
                                   <td rowspan="2">
@@ -727,7 +722,7 @@
                                 <tr>
                                   <td>
                                     <label>
-                                      <input class="star mr-2" type="checkbox" title="Add to favorites"> 985DD08G
+                                      <input class="star mr-2" type="checkbox" title="Add to favourites"> 985DD08G
                                     </label>
                                   </td>
                                   <td>
@@ -759,7 +754,7 @@
                                 <tr>
                                   <td>
                                     <label>
-                                      <input class="star mr-2" type="checkbox" title="Add to favorites"> 985DD08G
+                                      <input class="star mr-2" type="checkbox" title="Add to favourites"> 985DD08G
                                     </label>
                                     <td>
                                       Ooooooooo ooooo oooooooooo
@@ -811,7 +806,7 @@
               </td>
               <td>
                 <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
                 </label>
                 <i class="fa fa-area-chart ml-1"></i>
                 <td>
@@ -854,7 +849,7 @@
               </td>
               <td>
                 <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
                 </label>
                 <i class="fa fa-area-chart ml-1"></i>
               </td>
@@ -898,7 +893,7 @@
               </td>
               <td>
                 <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
                 </label>
                 <i class="fa fa-area-chart ml-1"></i>
               </td>
@@ -942,7 +937,7 @@
               </td>
               <td>
                 <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favorites"> HostName1
+                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
                 </label>
                 <i class="fa fa-area-chart ml-1"></i>
               </td>

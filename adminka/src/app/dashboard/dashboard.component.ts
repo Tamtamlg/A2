@@ -67,6 +67,11 @@ export class DashboardComponent implements OnInit {
 
   isLoaded = false;
 
+  // multiselect var
+  itemList = [];
+  selectedItems = [];
+  settings = {};
+
   constructor(private chartsDataService: ChartsDataService) {
 
     Object.assign(this, {
@@ -77,12 +82,30 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
 
+    // get charts data
     this.chartsDataService.getChartData().subscribe((response) => {
       this.dateData = response;
 
       this.isLoaded = true;
     });
 
+    // multiselect settings
+    this.itemList = [
+      { 'id': 1, 'itemName': 'X5' },
+      { 'id': 2, 'itemName': 'X6' },
+      { 'id': 3, 'itemName': 'X7' },
+      { 'id': 4, 'itemName': 'U6' }
+    ];
+
+    this.selectedItems = [
+      { 'id': 1, 'itemName': 'X5' }
+    ];
+    this.settings = {
+      text: 'Select Types',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      classes: 'filter-type'
+    };
 
   }
 

@@ -1,4 +1,3 @@
-import {AuthGuard} from './shared/services/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -21,6 +20,7 @@ import { AuthDataService } from './shared/services/auth-data.service';
 import { AuthService } from './shared/services/auth.service';
 import { SendDataService } from './shared/services/send-data.service';
 import { ChartsDataService } from './shared/services/carts-data.service';
+import {AuthGuard} from './shared/services/auth.guard';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

@@ -12,6 +12,7 @@ import {OwlDateTimeModule, OwlNativeDateTimeModule, OWL_DATE_TIME_FORMATS} from 
 import { FormsModule } from '@angular/forms';
 import { IconsModule } from '../icons/icons.module';
 import { FontawesomeComponent } from '../icons/fontawesome/fontawesome.component';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
 
 export const MY_NATIVE_FORMATS = {
   fullPickerInput: {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false},
@@ -23,6 +24,7 @@ export const MY_NATIVE_FORMATS = {
     RouterModule.forChild(DashboardRoutes),
     NgxChartsModule, NgbModule, OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    AngularMultiSelectModule,
     FormsModule
   ],
   providers: [
