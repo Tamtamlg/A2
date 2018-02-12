@@ -35,6 +35,14 @@
   padding: 7px;
 }
 
+.ng-sidebar__content .main-content > router-outlet + app-dashboard {
+  padding: 7px 15px;
+}
+
 .card {
   margin-bottom: 7px;
+}
+
+.selected-list .c-list .c-token {
+  background: #304ffe !important;
 }

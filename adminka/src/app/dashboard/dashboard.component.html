@@ -2,66 +2,66 @@
   <div class="col-lg-8">
 
 
-<div class="row">
-  <div class="col-sm-6 col-md-3">
-    <div class="card card-body card-widget">
-      <div class="widget-icon rounded-circle bg-blue text-white icon icon-basic-server2">
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-body card-widget">
+          <div class="widget-icon rounded-circle bg-blue text-white icon icon-basic-server2">
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              4500
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Total</strong>
+            </span>
+          </div>
+        </div>
       </div>
-      <div class="block ml-3">
-        <h5 class="mb-0 fw-400">
-          4500
-        </h5>
-        <span class="text-muted text-uppercase ">
-          <strong>Total</strong>
-        </span>
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-body card-widget">
+          <div class="widget-icon rounded-circle bg-green text-white icon icon-arrows-check">
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              4400
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Active</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-body card-widget">
+          <div class="widget-icon rounded-circle bg-teal text-white icon icon-basic-ban">
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              50
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Inactive</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <a role="button" class="card card-body card-widget">
+          <div class="widget-icon rounded-circle bg-red text-white">!
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              50
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Alarm</strong>
+            </span>
+          </div>
+        </a>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6 col-md-3">
-    <div class="card card-body card-widget">
-      <div class="widget-icon rounded-circle bg-green text-white icon icon-arrows-check">
-      </div>
-      <div class="block ml-3">
-        <h5 class="mb-0 fw-400">
-          4400
-        </h5>
-        <span class="text-muted text-uppercase ">
-          <strong>Active</strong>
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-3">
-    <div class="card card-body card-widget">
-      <div class="widget-icon rounded-circle bg-teal text-white icon icon-basic-ban">
-      </div>
-      <div class="block ml-3">
-        <h5 class="mb-0 fw-400">
-          50
-        </h5>
-        <span class="text-muted text-uppercase ">
-          <strong>Inactive</strong>
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-3">
-    <a role="button" class="card card-body card-widget">
-      <div class="widget-icon rounded-circle bg-red text-white">!
-      </div>
-      <div class="block ml-3">
-        <h5 class="mb-0 fw-400">
-          50
-        </h5>
-        <span class="text-muted text-uppercase ">
-          <strong>Alarm</strong>
-        </span>
-      </div>
-    </a>
-  </div>
-</div>
 
-</div>
+  </div>
 </div>
 
 <div class="row">
@@ -238,7 +238,12 @@
 
         <button type="submit" class="btn btn-primary">Apply</button>
 
-        <button type="button" class="btn btn-outline-dark" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">Toggle</button>
+        <button type="button" class="btn btn-outline-dark toggle-filter mr-1" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+          <span *ngIf="!isCollapsed">
+            <i class="fa fa-angle-down"></i> Expand</span>
+          <span *ngIf="isCollapsed">
+            <i class="fa fa-angle-up"></i> Collapse</span>
+        </button>
 
       </div>
       <div class="card-body">
@@ -363,8 +368,6 @@
             </div>
           </div>
         </div>
-        <!-- <button type="button" class="btn btn-outline-info" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
-          aria-controls="collapseExample">Toggle</button> -->
       </div>
     </form>
   </div>
@@ -474,13 +477,29 @@
             </tr>
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <tr>
-              <td colspan="12">
-                <div style="background: red; padding: 10px">
+              <td style="border: 0"></td>
+              <td colspan="11" style="border: 0">
+                <div class="table-responsive table-wrap">
+                  <ul class="mb-2 pl-0">
 
-                  <table class="table table-sm dashboard-table-2">
+                    <li class="d-flex">
+                      <div class="mr-3"><strong>Pool 1:</strong> stratum+tcp://bitcoinmine.com.ua:33333</div>
+                      <div><strong>User 1:</strong> 1HesYJSP1QqcyPEjnQ9vzBL1wujruNGe7R</div>
+                    </li>
+                    <li class="d-flex">
+                      <div class="mr-3"><strong>Pool 2:</strong> stratum+tcp://bitcoinmine.com.ua:33333</div>
+                      <div><strong>User 2:</strong> 1HesYJSP1QqcyPEjnQ9vzBL1wujruNGe7R</div>
+                    </li>
+                    <li class="d-flex">
+                      <div class="mr-3"><strong>Pool 3:</strong> stratum+tcp://bitcoinmine.com.ua:33333</div>
+                      <div><strong>User 3:</strong> 1HesYJSP1QqcyPEjnQ9vzBL1wujruNGe7R</div>
+                    </li>
+
+                  </ul>
+
+                  <table class="table table-sm dashboard-table-2 table-secondary">
                     <tbody>
                       <tr>
-
                         <td rowspan="2" class="toggler">
 
                         </td>
@@ -527,30 +546,31 @@
                         <td>
                           Hector4
                           <i class="fa fa-area-chart ml-1"></i>
-                          <td>
-                            X5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            2.34F
-                          </td>
-                          <td>
-                            125 16:25:11
-                          </td>
-                          <td>
-                            3-U, 10-T, 1-I
-                          </td>
+                        </td>
+                        <td>
+                          X5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          2.34F
+                        </td>
+                        <td>
+                          125 16:25:11
+                        </td>
+                        <td>
+                          3-U, 10-T, 1-I
+                        </td>
                       </tr>
                       <tr>
                         <td class="toggler">
@@ -559,30 +579,31 @@
                         <td>
                           Hector4
                           <i class="fa fa-area-chart ml-1"></i>
-                          <td>
-                            X5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            2.34F
-                          </td>
-                          <td>
-                            125 16:25:11
-                          </td>
-                          <td>
-                            3-U, 10-T, 1-I
-                          </td>
+                        </td>
+                        <td>
+                          X5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          2.34F
+                        </td>
+                        <td>
+                          125 16:25:11
+                        </td>
+                        <td>
+                          3-U, 10-T, 1-I
+                        </td>
                       </tr>
                       <tr>
                         <td class="toggler">
@@ -591,35 +612,37 @@
                         <td>
                           Hector4
                           <i class="fa fa-area-chart ml-1"></i>
-                          <td>
-                            X5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            45,5
-                          </td>
-                          <td>
-                            2.34F
-                          </td>
-                          <td>
-                            125 16:25:11
-                          </td>
-                          <td>
-                            3-U, 10-T, 1-I
-                          </td>
+                        </td>
+                        <td>
+                          X5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          45,5
+                        </td>
+                        <td>
+                          2.34F
+                        </td>
+                        <td>
+                          125 16:25:11
+                        </td>
+                        <td>
+                          3-U, 10-T, 1-I
+                        </td>
                       </tr>
                       <!-- *********************************************************************************************************** -->
                       <tr>
-                        <td colspan="12">
-                          <div style="background: green; padding: 10px">
+                        <td style="border: 0"></td>
+                        <td colspan="11" style="border: 0">
+                          <div class="table-responsive table-wrap">
 
                             <table class="table table-sm dashboard-table-3">
                               <tbody>
@@ -636,11 +659,9 @@
                                   <td colspan="4" class="text-center">
                                     HashRate, TH/s
                                   </td>
-
                                   <td rowspan="2">
                                     Version
                                   </td>
-
                                   <td rowspan="2">
                                     Alarms
                                   </td>
@@ -667,11 +688,61 @@
                                       <input class="star mr-2" type="checkbox" title="Add to favourites"> 985DD08G
                                     </label>
                                   </td>
+                                  <td rowspan="2" class="asic-status">
+                                    0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0
+                                  </td>
+                                  <td>
+                                    24
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    45,5
+                                  </td>
+                                  <td>
+                                    2.34F
+                                  </td>
+                                  <td>
+                                    3-U, 10-T, 1-I
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td>
+                                    T: 65°
+                                  </td>
+                                  <td>
+                                    U: 12.5V
+                                  </td>
+                                  <td colspan="2">
+                                    I1 / I2: 5A / 5.5A
+                                  </td>
+                                  <td colspan="2">
+                                    FAN: 1200 (15%), Auto
+                                  </td>
+                                  <td>
+                                    P: 1200 W
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <td rowspan="2">
+                                    <label>
+                                      <input class="star mr-2" type="checkbox" title="Add to favourites"> 985DD08G
+                                    </label>
+                                  </td>
                                   <td rowspan="2">
                                     Ooooooooo ooooo oooooooooo
                                   </td>
                                   <td>
-                                    125 16:25:11
+                                    24
                                   </td>
                                   <td>
                                     45,5
@@ -688,7 +759,6 @@
                                   <td>
                                     2.34F
                                   </td>
-
                                   <td>
                                     3-U, 10-T, 1-I
                                   </td>
@@ -696,40 +766,33 @@
 
                                 <tr>
                                   <td>
-                                    125 16:25:11
+                                    T: 65°
                                   </td>
                                   <td>
-                                    45,5
+                                    U: 12.5V
+                                  </td>
+                                  <td colspan="2">
+                                    I1 / I2: 5A / 5.5A
+                                  </td>
+                                  <td colspan="2">
+                                    FAN: 1200 (15%), Auto
                                   </td>
                                   <td>
-                                    45,5
-                                  </td>
-                                  <td>
-                                    45,5
-                                  </td>
-                                  <td>
-                                    45,5
-                                  </td>
-                                  <td>
-                                    2.34F
-                                  </td>
-
-                                  <td>
-                                    3-U, 10-T, 1-I
+                                    P: 1200 W
                                   </td>
                                 </tr>
 
                                 <tr>
-                                  <td>
+                                  <td rowspan="2">
                                     <label>
                                       <input class="star mr-2" type="checkbox" title="Add to favourites"> 985DD08G
                                     </label>
                                   </td>
-                                  <td>
+                                  <td rowspan="2">
                                     Ooooooooo ooooo oooooooooo
                                   </td>
                                   <td>
-                                    125 16:25:11
+                                    24
                                   </td>
                                   <td>
                                     45,5
@@ -746,52 +809,38 @@
                                   <td>
                                     2.34F
                                   </td>
-
                                   <td>
                                     3-U, 10-T, 1-I
                                   </td>
                                 </tr>
+
                                 <tr>
                                   <td>
-                                    <label>
-                                      <input class="star mr-2" type="checkbox" title="Add to favourites"> 985DD08G
-                                    </label>
-                                    <td>
-                                      Ooooooooo ooooo oooooooooo
-                                    </td>
-                                    <td>
-                                      125 16:25:11
-                                    </td>
-                                    <td>
-                                      45,5
-                                    </td>
-                                    <td>
-                                      45,5
-                                    </td>
-                                    <td>
-                                      45,5
-                                    </td>
-                                    <td>
-                                      45,5
-                                    </td>
-                                    <td>
-                                      2.34F
-                                    </td>
-
-                                    <td>
-                                      3-U, 10-T, 1-I
-                                    </td>
+                                    T: 65°
+                                  </td>
+                                  <td>
+                                    U: 12.5V
+                                  </td>
+                                  <td colspan="2">
+                                    I1 / I2: 5A / 5.5A
+                                  </td>
+                                  <td colspan="2">
+                                    FAN: 1200 (15%), Auto
+                                  </td>
+                                  <td>
+                                    P: 1200 W
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
                           </div>
-                          </td>
+                        </td>
                       </tr>
                       <!-- *********************************************************************************************************** -->
                     </tbody>
                   </table>
                 </div>
-                </td>
+              </td>
             </tr>
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <tr>
@@ -969,6 +1018,7 @@
                 3-U, 10-T, 1-I
               </td>
             </tr>
+
           </tbody>
         </table>
       </div>

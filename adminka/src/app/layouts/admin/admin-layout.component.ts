@@ -36,7 +36,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
   showSettings = false;
   isDocked = false;
   isBoxed = false;
-  isOpened = true;
+  isOpened = false;
   mode = 'push';
   _mode = this.mode;
   _autoCollapseWidth = 991;

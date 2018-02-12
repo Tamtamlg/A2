@@ -57,7 +57,7 @@ input[name="filterDates"] {
 }
 
 .dashboard-table {
-  background: #fcfcfc;
+  // background: #fcfcfc;
   margin-bottom: 0;
   label {
     margin: 0;
@@ -65,10 +65,9 @@ input[name="filterDates"] {
   td {
     vertical-align: middle;
   }
-  
-  tr:nth-of-type(odd) {
-    background-color: #eee;
-  }
+  // tr:nth-of-type(odd) {
+  //   background-color: #eee;
+  // }
   tr:nth-of-type(1),
   tr:nth-of-type(2) {
     background-color: #fff;
@@ -97,9 +96,7 @@ input[name="filterDates"] {
     td:nth-child(2) {
       padding-bottom: 0;
     }
-    
   }
-
   tr td table {
     margin-bottom: 0;
     tr:nth-of-type(1),
@@ -116,10 +113,17 @@ input[name="filterDates"] {
     }
   }
   .table.dashboard-table-3 {
-    background: lightsteelblue;
+    background: #b8e0f9;
+    tr:nth-of-type(even) td {
+      border: 0;
+      padding-left: 0.3rem;
+    }
   }
   .table.dashboard-table-2 {
-    background: lightsalmon;
+    background: #f5f5f5;
+  }
+  .asic-status {
+    width: 350px;
   }
 }
 
@@ -166,6 +170,19 @@ input[name="filterDates"] {
   padding: 5px 10px;
 }
 
+a.card.card-widget:hover {
+  transition: all 0.3s;
+  box-shadow: 0 1px 5px 2px #ccc;
+}
+
 .card-header {
   padding: 5px 10px;
+}
+
+.toggle-filter {
+  width: 100px;
+}
+
+.table-wrap {
+  padding: 0 10px 10px 0;
 }
