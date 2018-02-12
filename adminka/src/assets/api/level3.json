@@ -1,0 +1,52 @@
+{
+  "status": "S",
+  "data": [{
+      "id": "785DD08G",
+      "status": "0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0",
+      "asic": 24,
+      "hashrateMin": 45.5,
+      "hashrateHour": 45.5,
+      "hashrateDay": 45.5,
+      "avg": 45.5,
+      "version": "2.34F",
+      "alarms": "3-U, 10-T, 1-I",
+      "t": "65°",
+      "u": "2.5V",
+      "i": "I1 / I2: 5A / 5.5A",
+      "fan": "1200 (15%), Auto",
+      "p": "1200 W"
+    },
+    {
+      "id": "885DD08G",
+      "status": "Ooooooooo ooooo oooooooooo",
+      "asic": 24,
+      "hashrateMin": 45.5,
+      "hashrateHour": 45.5,
+      "hashrateDay": 45.5,
+      "avg": 45.5,
+      "version": "2.34F",
+      "alarms": "3-U, 10-T, 1-I",
+      "t": "65°",
+      "u": "2.5V",
+      "i": "I1 / I2: 5A / 5.5A",
+      "fan": "1200 (15%), Auto",
+      "p": "1200 W"
+    },
+    {
+      "id": "985DD08G",
+      "status": "Ooooooooo ooooo oooooooooo",
+      "asic": 24,
+      "hashrateMin": 45.5,
+      "hashrateHour": 45.5,
+      "hashrateDay": 45.5,
+      "avg": 45.5,
+      "version": "2.34F",
+      "alarms": "3-U, 10-T, 1-I",
+      "t": "65°",
+      "u": "2.5V",
+      "i": "I1 / I2: 5A / 5.5A",
+      "fan": "1200 (15%), Auto",
+      "p": "1200 W"
+    }
+  ]
+}

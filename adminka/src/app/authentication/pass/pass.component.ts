@@ -49,7 +49,7 @@ export class PassComponent implements OnInit {
   onSubmit() {
     const formData = this.form.value;
 
-    console.log(this.form)
+    // console.log(this.form)
 
     this.resetPasswordService.sendData(formData.password);
 

@@ -8,6 +8,7 @@ import {
 } from '../shared/chartData';
 import { FormControl } from '@angular/forms';
 import { ChartsDataService } from '../shared/services/carts-data.service';
+import { DataTableService } from '../shared/services/datatable.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -72,7 +73,13 @@ export class DashboardComponent implements OnInit {
   selectedItems = [];
   settings = {};
 
-  constructor(private chartsDataService: ChartsDataService) {
+  // datatables
+  dataTableLevel3 = [];
+
+  constructor(
+    private chartsDataService: ChartsDataService,
+    private dataTableService: DataTableService
+  ) {
 
     Object.assign(this, {
       single
@@ -118,4 +125,13 @@ export class DashboardComponent implements OnInit {
   }
 
 
+  onClickLevel3() {
+    this.dataTableService.getDataLevel3().subscribe((response) => {
+
+      if (response.status === 'S') {
+        this.dataTableLevel3 = response.data;
+      }
+      console.log('getDataLevel3');
+    });
+  }
 }

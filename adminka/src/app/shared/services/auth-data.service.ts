@@ -13,7 +13,7 @@ export class AuthDataService {
     //         .map((response) => response[0] ? response[0] : undefined);
     // }
 
-    gatAuthData(email: string, password: string): Observable<any> {
+    getAuthData(email: string, password: string): Observable<any> {
         return this.http.get('assets/api/auth.json');
     }
 

@@ -48,7 +48,7 @@ export class SigninComponent implements OnInit {
   onSubmit() {
     const formData = this.form.value;
 
-    this.authDataService.gatAuthData(formData.email, formData.password).subscribe((response) => {
+    this.authDataService.getAuthData(formData.email, formData.password).subscribe((response) => {
       if (response.data.auth) {
           this.message.text = '';
           localStorage.setItem('user', JSON.stringify(formData.email));

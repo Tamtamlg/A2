@@ -31,7 +31,7 @@ export class ForgotComponent implements OnInit {
   }
 
   onSubmit() {
-    
+
     const formData = this.form.value;
 
     this.forgotPasswordService.sendData(formData.email);
