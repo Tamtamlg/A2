@@ -112,13 +112,7 @@ input[name="filterDates"] {
       background-color: transparent;
     }
   }
-  .table.dashboard-table-3 {
-    background: #b8e0f9;
-    tr:nth-of-type(even) td {
-      border: 0;
-      padding-left: 0.3rem;
-    }
-  }
+  
   .table.dashboard-table-2 {
     background: #f5f5f5;
   }
@@ -126,11 +120,6 @@ input[name="filterDates"] {
     width: 350px;
   }
 }
-
-// .toggler {
-//   font-size: 20px;
-//   cursor: pointer;
-// }
 
 .star {
   visibility: hidden;
@@ -219,4 +208,9 @@ a.card.card-widget:hover {
 
 .checkbox {
   width: 54px;
+}
+
+.alarm-modal-body {
+  overflow-y: auto;
+  max-height: 260px;
 }

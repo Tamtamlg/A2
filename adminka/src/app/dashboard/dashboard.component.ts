@@ -9,6 +9,7 @@ import {
 import { FormControl } from '@angular/forms';
 import { ChartsDataService } from '../shared/services/carts-data.service';
 import { DataTableService } from '../shared/services/datatable.service';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dashboard',
@@ -79,7 +80,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private chartsDataService: ChartsDataService,
-    private dataTableService: DataTableService
+    private dataTableService: DataTableService,
+    private modalService: NgbModal
   ) {
 
     Object.assign(this, {
@@ -125,25 +127,31 @@ export class DashboardComponent implements OnInit {
   //   console.log('Legend clicked', entry);
   // }
 
+  openAlarmModal(content) {
+    this.modalService.open(content).result.then((result) => {
+      // this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
 
-  getTableDetails3(index) {
+
+  getTableDetails3() {
     this.dataTableService.getDataLevel3().subscribe((response) => {
       if (response.status === 'S') {
-        this.dataTableLevel3[index] = response.data;
+        this.dataTableLevel3 = response.data;
       }
-      console.log('getTableDetails3');
+      console.log('getTableDetails3', this.dataTableLevel3);
     });
-    console.log(this.dataTableLevel3);
   }
 
   getTableDetails2() {
-    this.dataTableService.getDataLevel3().subscribe((response) => {
+    this.dataTableService.getDataLevel2().subscribe((response) => {
       if (response.status === 'S') {
         this.dataTableLevel2 = response.data;
       }
-      console.log('getTableDetails2');
+      console.log('getTableDetails2', this.dataTableLevel2);
     });
-    console.log(this.dataTableLevel2);
   }
 
   toggleTable3(btn, table, index) {
@@ -151,7 +159,7 @@ export class DashboardComponent implements OnInit {
       // check if data has been fetched already
       if (!table.classList.contains('fetched')) {
         table.classList.add('fetched');
-        this.getTableDetails3(index);
+        this.getTableDetails3();
       }
       table.classList.add('show');
       btn.classList.add('open');
