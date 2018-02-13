@@ -64,8 +64,7 @@ input[name="filterDates"] {
   }
   td {
     vertical-align: middle;
-  }
-  // tr:nth-of-type(odd) {
+  } // tr:nth-of-type(odd) {
   //   background-color: #eee;
   // }
   tr:nth-of-type(1),
@@ -112,7 +111,13 @@ input[name="filterDates"] {
       background-color: transparent;
     }
   }
-  
+  .table.dashboard-table-3 {
+    background: #b8e0f9;
+    tr:nth-of-type(even) td {
+      border: 0;
+      padding-left: 0.3rem;
+    }
+  }
   .table.dashboard-table-2 {
     background: #f5f5f5;
   }
@@ -213,4 +218,19 @@ a.card.card-widget:hover {
 .alarm-modal-body {
   overflow-y: auto;
   max-height: 260px;
+}
+
+.pools {
+  padding-left: 40px;
+  li {
+    display: flex;
+  }
+  li:not(:first-of-type) {
+    display: none;
+  }
+  &.shown {
+    li {
+      display: flex;
+    }
+  }
 }

@@ -75,8 +75,7 @@ export class DashboardComponent implements OnInit {
   settings = {};
 
   // datatables
-  dataTableLevel3 = [];
-  dataTableLevel2 = [];
+  dataTableDetails = [];
 
   constructor(
     private chartsDataService: ChartsDataService,
@@ -117,65 +116,38 @@ export class DashboardComponent implements OnInit {
       classes: 'filter-type'
     };
 
+    this.getTableDetails();
+
   }
 
-  // select(data) {
-  //   console.log('Item clicked', data);
-  // }
+  select(data) {
+    console.log('Item clicked', data);
+  }
 
-  // onLegendLabelClick(entry) {
-  //   console.log('Legend clicked', entry);
-  // }
+  onLegendLabelClick(entry) {
+    console.log('Legend clicked', entry);
+  }
 
   openAlarmModal(content) {
     this.modalService.open(content).result.then((result) => {
-      // this.closeResult = `Closed with: ${result}`;
+
     }, (reason) => {
-      // this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+
     });
   }
 
 
-  getTableDetails3() {
-    this.dataTableService.getDataLevel3().subscribe((response) => {
+  getTableDetails() {
+    this.dataTableService.getTablesData().subscribe((response) => {
       if (response.status === 'S') {
-        this.dataTableLevel3 = response.data;
+        this.dataTableDetails = response;
       }
-      console.log('getTableDetails3', this.dataTableLevel3);
+      console.log('dataTableDetails', this.dataTableDetails);
     });
   }
 
-  getTableDetails2() {
-    this.dataTableService.getDataLevel2().subscribe((response) => {
-      if (response.status === 'S') {
-        this.dataTableLevel2 = response.data;
-      }
-      console.log('getTableDetails2', this.dataTableLevel2);
-    });
-  }
-
-  toggleTable3(btn, table, index) {
+  toggleTable(btn, table) {
     if ( !btn.classList.contains('open') ) {
-      // check if data has been fetched already
-      if (!table.classList.contains('fetched')) {
-        table.classList.add('fetched');
-        this.getTableDetails3();
-      }
-      table.classList.add('show');
-      btn.classList.add('open');
-    } else {
-      table.classList.remove('show');
-      btn.classList.remove('open');
-    }
-  }
-
-  toggleTable2(btn, table) {
-    if ( !btn.classList.contains('open') ) {
-      // check if data has been fetched already
-      if (!table.classList.contains('fetched')) {
-        table.classList.add('fetched');
-        this.getTableDetails2();
-      }
       table.classList.add('show');
       btn.classList.add('open');
     } else {

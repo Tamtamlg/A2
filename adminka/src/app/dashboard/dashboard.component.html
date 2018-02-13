@@ -430,7 +430,7 @@
                 GHz
               </td>
             </tr>
-
+            <ng-template ngFor let-item [ngForOf]="dataTableDetails.level1" let-i="index">
             <tr>
               <td scope="row" class="checkbox">
                 <label class="custom-control custom-checkbox">
@@ -438,72 +438,68 @@
                   <span class="custom-control-indicator"></span>
                 </label>
               </td>
-              <td class="toggler" #btn2 (click)="toggleTable2(btn2, innerRow2)">
+              <td class="toggler" #btn2 (click)="toggleTable(btn2, innerRow2)">
                 <i class="icon icon-arrows-down" aria-hidden="true"></i>
               </td>
               <td>
                 <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
+                  <input class="star mr-2" type="checkbox" title="Add to favourites"> {{item.hostName}}
                 </label>
                 <i class="fa fa-area-chart ml-1"></i>
               </td>
               <td>
-                X5
+                {{item.type}}
               </td>
               <td>
-                45,5
+                {{item.hashrateMin}}
               </td>
               <td>
-                45,5
+                {{item.hashrateHour}}
               </td>
               <td>
-                45,5
+                {{item.hashrateDay}}
               </td>
               <td>
-                45,5
+                {{item.avg}}
               </td>
               <td>
-                5,5
+                {{item.clock}}
               </td>
               <td>
-                2.34F
+                {{item.build}}
               </td>
               <td>
-                125 16:25:11
+                {{item.uptime}}
               </td>
               <td>
-                3-U, 10-T, 1-I
+                {{item.alarms}}
               </td>
             </tr>
-            <!-- ///////////////////////////////////////level-2///////////////////////////////////////////////////////////////// -->
-
+      
             <tr>
-
               <td style="border: 0"></td>
               <td colspan="11" style="border: 0">
                 <div class="table-responsive table-wrap">
 
-                  <ul class="mb-2 pl-0">
-
-                    <li class="d-flex">
+                  <ul class="mb-0 pools" [ngClass]="{'shown': innerRow2.classList.contains('show')}">
+                    <li>
                       <div class="mr-3">
-                        <strong>Pool 1:</strong> stratum+tcp://bitcoinmine.com.ua:33333</div>
+                        <strong>Pool 1:</strong> {{item.pool1}}</div>
                       <div>
-                        <strong>User 1:</strong> 1HesYJSP1QqcyPEjnQ9vzBL1wujruNGe7R</div>
+                        <strong>User 1:</strong> {{item.user1}}</div>
                     </li>
-                    <li class="d-flex">
+                    <li>
                       <div class="mr-3">
-                        <strong>Pool 2:</strong> stratum+tcp://bitcoinmine.com.ua:33333</div>
+                        <strong>Pool 2:</strong> {{item.pool2}}</div>
                       <div>
-                        <strong>User 2:</strong> 1HesYJSP1QqcyPEjnQ9vzBL1wujruNGe7R</div>
+                        <strong>User 2:</strong> {{item.user2}}</div>
                     </li>
-                    <li class="d-flex">
+                    <li class="mb-2">
                       <div class="mr-3">
-                        <strong>Pool 3:</strong> stratum+tcp://bitcoinmine.com.ua:33333</div>
+                        <strong>Pool 3:</strong> {{item.pool3}}</div>
                       <div>
-                        <strong>User 3:</strong> 1HesYJSP1QqcyPEjnQ9vzBL1wujruNGe7R</div>
+                        <strong>User 3:</strong> {{item.user3}}</div>
                     </li>
-
                   </ul>
 
                   <table class="table table-sm dashboard-table-2 table-secondary inner-section" #innerRow2>
@@ -547,9 +543,9 @@
                           AVG
                         </td>
                       </tr>
-                      <ng-template ngFor let-item [ngForOf]="dataTableLevel2" let-i="index">
+                      <ng-template ngFor let-item [ngForOf]="dataTableDetails.level2" let-i="index">
                         <tr>
-                          <td class="toggler" #btn (click)="toggleTable3(btn, innerRow, i)">
+                          <td class="toggler" #btn (click)="toggleTable(btn, innerRow)">
                             <i class="icon icon-arrows-down" aria-hidden="true"></i>
                           </td>
                           <td>
@@ -581,200 +577,109 @@
                             {{item.alarms}}
                           </td>
                         </tr>
-                        <!-- **************************level-3********************************************************************************* -->
+                        
                         <tr class="inner-section" #innerRow>
                           <td style="border: 0"></td>
                           <td colspan="11" style="border: 0">
-                            <app-table-three></app-table-three>
+                            <div class="table-responsive table-wrap" >
+                              <table class="table table-sm dashboard-table-3">
+                                <tbody>
+                                  <tr>
+                                    <td rowspan="2">
+                                      ID
+                                    </td>
+                                    <td rowspan="2">
+                                      ASIC Status
+                                    </td>
+                                    <td rowspan="2">
+                                      ASIC#
+                                    </td>
+                                    <td colspan="4" class="text-center">
+                                      HashRate, TH/s
+                                    </td>
+                                    <td rowspan="2">
+                                      Version
+                                    </td>
+                                    <td rowspan="2">
+                                      Alarms
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      15MIN
+                                    </td>
+                                    <td>
+                                      1H
+                                    </td>
+                                    <td>
+                                      1D
+                                    </td>
+                                    <td>
+                                      AVG
+                                    </td>
+                                  </tr>
+                                  <ng-template ngFor let-item [ngForOf]="dataTableDetails.level3" let-i="index">
+                                    <tr>
+                                      <td rowspan="2">
+                                        <label>
+                                          <input class="star mr-2" type="checkbox" title="Add to favourites"> {{item.id}}
+                                        </label>
+                                      </td>
+                                      <td rowspan="2" class="asic-status">
+                                        {{item.status}}
+                                      </td>
+                                      <td>
+                                        {{item.asic}}
+                                      </td>
+                                      <td>
+                                        {{item.hashrateMin}}
+                                      </td>
+                                      <td>
+                                        {{item.hashrateHour}}
+                                      </td>
+                                      <td>
+                                        {{item.hashrateDay}}
+                                      </td>
+                                      <td>
+                                        {{item.avg}}
+                                      </td>
+                                      <td>
+                                        {{item.version}}
+                                      </td>
+                                      <td>
+                                        {{item.alarms}}
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        T: {{item.t}}
+                                      </td>
+                                      <td>
+                                        U: {{item.u}}
+                                      </td>
+                                      <td colspan="2">
+                                        {{item.i}}
+                                      </td>
+                                      <td colspan="2">
+                                        FAN: {{item.fan}}
+                                      </td>
+                                      <td>
+                                        P: {{item.p}}
+                                      </td>
+                                    </tr>
+                                  </ng-template>
+                                </tbody>
+                              </table>
+                            </div>
                           </td>
                         </tr>
                       </ng-template>
-                      <!-- ****************************level-3******************************************************************************* -->
-
                     </tbody>
                   </table>
                 </div>
               </td>
-
             </tr>
-
-            <!-- //////////////////////////////////////level-2////////////////////////////////////////////////////////////////// -->
-            <tr>
-              <td scope="row" class="checkbox">
-                <label class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                </label>
-              </td>
-              <td class="toggler">
-                <i class="icon icon-arrows-down" aria-hidden="true"></i>
-              </td>
-              <td>
-                <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
-                </label>
-                <i class="fa fa-area-chart ml-1"></i>
-                <td>
-                  X5
-                </td>
-                <td>
-                  45,5
-                </td>
-                <td>
-                  45,5
-                </td>
-                <td>
-                  45,5
-                </td>
-                <td>
-                  45,5
-                </td>
-                <td>
-                  5,5
-                </td>
-                <td>
-                  2.34F
-                </td>
-                <td>
-                  125 16:25:11
-                </td>
-                <td>
-                  3-U, 10-T, 1-I
-                </td>
-            </tr>
-            <tr>
-              <td scope="row" class="checkbox">
-                <label class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                </label>
-              </td>
-              <td class="toggler">
-                <i class="icon icon-arrows-down" aria-hidden="true"></i>
-              </td>
-              <td>
-                <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
-                </label>
-                <i class="fa fa-area-chart ml-1"></i>
-              </td>
-              <td>
-                X5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                5,5
-              </td>
-              <td>
-                2.34F
-              </td>
-              <td>
-                125 16:25:11
-              </td>
-              <td>
-                3-U, 10-T, 1-I
-              </td>
-            </tr>
-            <tr>
-              <td scope="row" class="checkbox">
-                <label class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                </label>
-              </td>
-              <td class="toggler">
-                <i class="icon icon-arrows-down" aria-hidden="true"></i>
-              </td>
-              <td>
-                <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
-                </label>
-                <i class="fa fa-area-chart ml-1"></i>
-              </td>
-              <td>
-                X5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                5,5
-              </td>
-              <td>
-                2.34F
-              </td>
-              <td>
-                125 16:25:11
-              </td>
-              <td>
-                3-U, 10-T, 1-I
-              </td>
-            </tr>
-            <tr>
-              <td scope="row" class="checkbox">
-                <label class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                </label>
-              </td>
-              <td class="toggler">
-                <i class="icon icon-arrows-down" aria-hidden="true"></i>
-              </td>
-              <td>
-                <label>
-                  <input class="star mr-2" type="checkbox" title="Add to favourites"> HostName1
-                </label>
-                <i class="fa fa-area-chart ml-1"></i>
-              </td>
-              <td>
-                X5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                45,5
-              </td>
-              <td>
-                5,5
-              </td>
-              <td>
-                2.34F
-              </td>
-              <td>
-                125 16:25:11
-              </td>
-              <td>
-                3-U, 10-T, 1-I
-              </td>
-            </tr>
-
+            </ng-template>
           </tbody>
         </table>
       </div>

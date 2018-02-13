@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { IconsModule } from '../icons/icons.module';
 import { FontawesomeComponent } from '../icons/fontawesome/fontawesome.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
-import { TableThreeComponent } from './table-three/table-three.component';
 
 export const MY_NATIVE_FORMATS = {
   fullPickerInput: {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false},
@@ -31,7 +30,7 @@ export const MY_NATIVE_FORMATS = {
   providers: [
     {provide: OWL_DATE_TIME_FORMATS, useValue: MY_NATIVE_FORMATS},
 ],
-  declarations: [DashboardComponent, TableThreeComponent]
+  declarations: [DashboardComponent]
 })
 
 export class DashboardModule {}

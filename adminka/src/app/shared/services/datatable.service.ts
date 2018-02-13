@@ -8,12 +8,7 @@ import { User } from '../models/user.model';
 export class DataTableService {
     constructor (private http: HttpClient) {}
 
-    getDataLevel3(): Observable<any> {
-        return this.http.get('assets/api/level3.json');
+    getTablesData(): Observable<any> {
+        return this.http.get('assets/api/tablesData.json');
     }
-
-    getDataLevel2(): Observable<any> {
-        return this.http.get('assets/api/level2.json');
-    }
-
 }
