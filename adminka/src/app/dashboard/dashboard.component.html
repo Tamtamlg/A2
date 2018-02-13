@@ -381,7 +381,7 @@
         <table class="table table-sm dashboard-table">
           <tbody>
             <tr>
-              <td rowspan="2">
+              <td rowspan="2" class="checkbox">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input">
                   <span class="custom-control-indicator"></span>
@@ -432,13 +432,13 @@
             </tr>
 
             <tr>
-              <td scope="row">
+              <td scope="row" class="checkbox">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input">
                   <span class="custom-control-indicator"></span>
                 </label>
               </td>
-              <td class="toggler">
+              <td class="toggler" #btn2 (click)="toggleTable2(btn2, innerRow2)">
                 <i class="icon icon-arrows-down" aria-hidden="true"></i>
               </td>
               <td>
@@ -476,10 +476,13 @@
               </td>
             </tr>
             <!-- ///////////////////////////////////////level-2///////////////////////////////////////////////////////////////// -->
+            
             <tr>
+                
               <td style="border: 0"></td>
               <td colspan="11" style="border: 0">
                 <div class="table-responsive table-wrap">
+                  
                   <ul class="mb-2 pl-0">
 
                     <li class="d-flex">
@@ -503,8 +506,8 @@
 
                   </ul>
 
-                  <table class="table table-sm dashboard-table-2 table-secondary">
-                    <tbody>
+                  <table class="table table-sm dashboard-table-2 table-secondary inner-section" #innerRow2>
+                    <tbody class="" >
                       <tr>
                         <td rowspan="2" class="toggler">
 
@@ -544,13 +547,13 @@
                           AVG
                         </td>
                       </tr>
-
+                      <ng-template ngFor let-item [ngForOf]="dataTableLevel2" let-i="index">
                       <tr>
-                        <td class="toggler" (click)="onClickLevel3()">
+                        <td class="toggler" #btn (click)="toggleTable3(btn, innerRow, i)">
                           <i class="icon icon-arrows-down" aria-hidden="true"></i>
                         </td>
                         <td>
-                          Hector4
+                          {{item.name}}
                           <i class="fa fa-area-chart ml-1"></i>
                         </td>
                         <td>
@@ -579,10 +582,10 @@
                         </td>
                       </tr>
                       <!-- **************************level-3********************************************************************************* -->
-                      <tr>
+                      <tr class="inner-section" #innerRow>
                         <td style="border: 0"></td>
                         <td colspan="11" style="border: 0">
-                          <div class="table-responsive table-wrap">
+                          <div class="table-responsive table-wrap" >
                             <table class="table table-sm dashboard-table-3">
                               <tbody>
                                 <tr>
@@ -674,16 +677,19 @@
                           </div>
                         </td>
                       </tr>
+                    </ng-template>
                       <!-- ****************************level-3******************************************************************************* -->
-
+                    
                     </tbody>
                   </table>
                 </div>
               </td>
+            
             </tr>
+          
             <!-- //////////////////////////////////////level-2////////////////////////////////////////////////////////////////// -->
             <tr>
-              <td scope="row">
+              <td scope="row" class="checkbox">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input">
                   <span class="custom-control-indicator"></span>
@@ -726,7 +732,7 @@
                 </td>
             </tr>
             <tr>
-              <td scope="row">
+              <td scope="row" class="checkbox">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input">
                   <span class="custom-control-indicator"></span>
@@ -770,7 +776,7 @@
               </td>
             </tr>
             <tr>
-              <td scope="row">
+              <td scope="row" class="checkbox">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input">
                   <span class="custom-control-indicator"></span>
@@ -814,7 +820,7 @@
               </td>
             </tr>
             <tr>
-              <td scope="row">
+              <td scope="row" class="checkbox">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input">
                   <span class="custom-control-indicator"></span>

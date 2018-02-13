@@ -127,10 +127,10 @@ input[name="filterDates"] {
   }
 }
 
-.toggler {
-  font-size: 20px;
-  cursor: pointer;
-}
+// .toggler {
+//   font-size: 20px;
+//   cursor: pointer;
+// }
 
 .star {
   visibility: hidden;
@@ -185,4 +185,38 @@ a.card.card-widget:hover {
 
 .table-wrap {
   padding: 0 10px 10px 0;
+}
+
+.toggler {
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  width: 40px;
+  &.open .icon {
+    top: calc(50% - 19px);
+    transform: rotateX(180deg);
+  }
+  .icon {
+    position: absolute;
+    top: calc(50% - 13px);
+    left: 11px;
+  }
+}
+
+.inner-section {
+  display: none;
+  &.show {
+    display: table-row;
+  }
+}
+
+.dashboard-table-2.inner-section {
+  display: none;
+  &.show {
+    display: table;
+  }
+}
+
+.checkbox {
+  width: 54px;
 }

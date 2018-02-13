@@ -75,6 +75,7 @@ export class DashboardComponent implements OnInit {
 
   // datatables
   dataTableLevel3 = [];
+  dataTableLevel2 = [];
 
   constructor(
     private chartsDataService: ChartsDataService,
@@ -116,22 +117,63 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  select(data) {
-    console.log('Item clicked', data);
-  }
+  // select(data) {
+  //   console.log('Item clicked', data);
+  // }
 
-  onLegendLabelClick(entry) {
-    console.log('Legend clicked', entry);
-  }
+  // onLegendLabelClick(entry) {
+  //   console.log('Legend clicked', entry);
+  // }
 
 
-  onClickLevel3() {
+  getTableDetails3(index) {
     this.dataTableService.getDataLevel3().subscribe((response) => {
-
       if (response.status === 'S') {
-        this.dataTableLevel3 = response.data;
+        this.dataTableLevel3[index] = response.data;
       }
-      console.log('getDataLevel3');
+      console.log('getTableDetails3');
     });
+    console.log(this.dataTableLevel3);
   }
+
+  getTableDetails2() {
+    this.dataTableService.getDataLevel3().subscribe((response) => {
+      if (response.status === 'S') {
+        this.dataTableLevel2 = response.data;
+      }
+      console.log('getTableDetails2');
+    });
+    console.log(this.dataTableLevel2);
+  }
+
+  toggleTable3(btn, table, index) {
+    if ( !btn.classList.contains('open') ) {
+      // check if data has been fetched already
+      if (!table.classList.contains('fetched')) {
+        table.classList.add('fetched');
+        this.getTableDetails3(index);
+      }
+      table.classList.add('show');
+      btn.classList.add('open');
+    } else {
+      table.classList.remove('show');
+      btn.classList.remove('open');
+    }
+  }
+
+  toggleTable2(btn, table) {
+    if ( !btn.classList.contains('open') ) {
+      // check if data has been fetched already
+      if (!table.classList.contains('fetched')) {
+        table.classList.add('fetched');
+        this.getTableDetails2();
+      }
+      table.classList.add('show');
+      btn.classList.add('open');
+    } else {
+      table.classList.remove('show');
+      btn.classList.remove('open');
+    }
+  }
+
 }

@@ -1,0 +1,36 @@
+{
+  "status": "S",
+  "data": [{
+    "name": "Hector4",
+    "boards": "0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0",
+    "hashrateMin": 45.5,
+    "hashrateHour": 45.5,
+    "hashrateDay": 45.5,
+    "avg": 45.5,
+    "version": "2.34F",
+    "uptime": "125 16:25:11",
+    "alarms": "3-U, 10-T, 1-I"
+  },
+  {
+    "name": "Hector5",
+    "boards": "0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0",
+    "hashrateMin": 45.5,
+    "hashrateHour": 45.5,
+    "hashrateDay": 45.5,
+    "avg": 45.5,
+    "version": "2.34F",
+    "uptime": "125 16:25:11",
+    "alarms": "3-U, 10-T, 1-I"
+  },
+  {
+    "name": "Hector6",
+    "boards": "0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0 0000 000x0",
+    "hashrateMin": 45.5,
+    "hashrateHour": 45.5,
+    "hashrateDay": 45.5,
+    "avg": 45.5,
+    "version": "2.34F",
+    "uptime": "125 16:25:11",
+    "alarms": "3-U, 10-T, 1-I"
+  }]
+}

@@ -12,4 +12,8 @@ export class DataTableService {
         return this.http.get('assets/api/level3.json');
     }
 
+    getDataLevel2(): Observable<any> {
+        return this.http.get('assets/api/level2.json');
+    }
+
 }
