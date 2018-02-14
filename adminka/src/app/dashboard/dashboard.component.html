@@ -388,7 +388,7 @@
                 </label>
               </td>
               <td rowspan="2" class="toggler">
-                <i class="icon icon-arrows-down" aria-hidden="true"></i>
+                <i class="icon icon-arrows-down show-all-table" aria-hidden="true"></i>
               </td>
               <td rowspan="2">
                 HostName
@@ -543,7 +543,7 @@
                           AVG
                         </td>
                       </tr>
-                      <ng-template ngFor let-item [ngForOf]="dataTableDetails.level2" let-i="index">
+                      <ng-template ngFor let-item [ngForOf]="dataTableDetails.level1[i].level2" let-j="index">
                         <tr>
                           <td class="toggler" #btn (click)="toggleTable(btn, innerRow)">
                             <i class="icon icon-arrows-down" aria-hidden="true"></i>
@@ -618,7 +618,7 @@
                                       AVG
                                     </td>
                                   </tr>
-                                  <ng-template ngFor let-item [ngForOf]="dataTableDetails.level3" let-i="index">
+                                  <ng-template ngFor let-item [ngForOf]="dataTableDetails.level1[i].level2[j].level3" let-i="index">
                                     <tr>
                                       <td rowspan="2">
                                         <label>
