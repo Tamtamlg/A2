@@ -125,7 +125,8 @@ export class DashboardComponent implements OnInit {
       classes: 'filter-type'
     };
 
-    this.getTableDetails();
+    // this.getTableDetails();
+    this.getTableDetailsInterval();
 
 
 
@@ -154,22 +155,34 @@ export class DashboardComponent implements OnInit {
   }
 
   getTableDetails() {
-    if (this.updateTimeService.updTime > -1) {
-      this.interval = setInterval(() => {
-        this.dataTableService.getTablesData().subscribe((response) => {
-          if (response.status === 'S') {
-            this.dataTableDetails = response;
-          } else {
-            console.log('что-то пошло не так');
-          }
-        });
-        console.log('update', this.updateTimeService.updTime);
-      }, this.updateTimeService.updTime);
+    this.dataTableService.getTablesData().subscribe((response) => {
+      if (response.status === 'S') {
+        this.dataTableDetails = response;
+      } else {
+        console.log('что-то пошло не так');
+      }
+    });
+  }
 
-    } else {
-      clearInterval(this.interval);
-      console.log('clearInterval');
-    }
+  getTableDetailsInterval() {
+    const dhis = this;
+    dhis.getTableDetails();
+    // if (dhis.updateTimeService.updTime > 1) {
+    dhis.interval = setTimeout(function run() {
+      if (dhis.updateTimeService.updTime > 1) {
+        dhis.getTableDetails();
+        dhis.interval = setTimeout(run, dhis.updateTimeService.updTime);
+      } else {
+        clearTimeout(dhis.interval);
+        console.log('clearInterval');
+      }
+      // console.log('update', this.updateTimeService.updTime);
+    }, dhis.updateTimeService.updTime);
+
+    // } else {
+    //   clearTimeout(dhis.interval);
+    //   console.log('clearInterval');
+    // }
   }
 
   toggleTable(btn, table) {
