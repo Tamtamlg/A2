@@ -9,6 +9,7 @@ import 'rxjs/add/operator/filter';
 import { TranslateService } from '@ngx-translate/core';
 import { User } from '../../shared/models/user.model';
 import { AuthService } from '../../shared/services/auth.service';
+import { UpdateTimeService } from '../../shared/services/update-time.service';
 
 const SMALL_WIDTH_BREAKPOINT = 991;
 
@@ -46,6 +47,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor (
     public menuItems: MenuItems,
+    public updateTimeService: UpdateTimeService,
     private router: Router,
     private route: ActivatedRoute,
     public translate: TranslateService,
@@ -134,5 +136,9 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
   onLogout() {
     this.authService.logout();
     this.router.navigate(['./authentication/signin']);
+  }
+
+  onUpdTime(number) {
+    this.updateTimeService.updTime = number;
   }
 }

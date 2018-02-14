@@ -13,9 +13,11 @@
     border-radius: 0;
   }
 }
+
 .configuration.active {
   transform: translate(0, 0);
 }
+
 .configuration-cog {
   width: 50px;
   height: 50px;
@@ -32,4 +34,20 @@
   i:before {
     line-height: 50px;
   }
+}
+
+.navbar-nav {
+  .navbar-brand-logo {
+    height: 31px;
+  }
+}
+
+input[name="update"]~span {
+  cursor: pointer;
+  display: inline-block;
+  min-width: 50px;
+}
+
+input[name="update"]:checked~span {
+  font-weight: bold;
 }

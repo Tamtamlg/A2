@@ -1,7 +1,5 @@
-<div class="row justify-content-center">
+<!-- <div class="row justify-content-center">
   <div class="col-lg-8">
-
-
     <div class="row">
       <div class="col-sm-6 col-md-3">
         <div class="card card-body card-widget">
@@ -60,11 +58,10 @@
         </a>
       </div>
     </div>
-
   </div>
-</div>
+</div> -->
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-lg-4">
     <div class="card">
       <div class="card-header no-shadow">
@@ -192,9 +189,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-lg-12">
     <form class="card filtersFomr">
       <div class="card-header">
@@ -371,7 +368,7 @@
       </div>
     </form>
   </div>
-</div>
+</div> -->
 
 <div class="row">
   <div class="col">
@@ -383,7 +380,7 @@
             <tr>
               <td rowspan="2" class="checkbox">
                 <label class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input">
+                  <input type="checkbox" class="custom-control-input"> <!--  [checked]="isAllChecked()" (change)="checkAll($event)" -->
                   <span class="custom-control-indicator"></span>
                 </label>
               </td>
@@ -434,7 +431,7 @@
             <tr>
               <td scope="row" class="checkbox">
                 <label class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input">
+                  <input type="checkbox" class="custom-control-input check" #cb (change)="checkedChbx()" [class.selected]="cb.checked">
                   <span class="custom-control-indicator"></span>
                 </label>
               </td>
@@ -689,7 +686,7 @@
 
 <div class="row">
   <div class="col">
-    <p>You have selected 25 items</p>
+    <p>You have selected {{checkedCheckboxLength}} items</p>
   </div>
 </div>
 

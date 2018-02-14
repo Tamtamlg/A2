@@ -1,5 +1,5 @@
 import * as moment from 'moment';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import * as shape from 'd3-shape';
 import { colorSets } from '@swimlane/ngx-charts/release/utils/color-sets';
 import {
@@ -10,6 +10,7 @@ import { FormControl } from '@angular/forms';
 import { ChartsDataService } from '../shared/services/carts-data.service';
 import { DataTableService } from '../shared/services/datatable.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateTimeService } from '../shared/services/update-time.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -77,10 +78,18 @@ export class DashboardComponent implements OnInit {
   // datatables
   dataTableDetails = [];
 
+  interval;
+  // updateInterval = 300000;
+
+  // checked checkbox length
+  checkedCheckboxLength = 0;
+
+
   constructor(
     private chartsDataService: ChartsDataService,
     private dataTableService: DataTableService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private updateTimeService: UpdateTimeService
   ) {
 
     Object.assign(this, {
@@ -118,7 +127,15 @@ export class DashboardComponent implements OnInit {
 
     this.getTableDetails();
 
+
+
   }
+
+
+
+
+
+
 
   select(data) {
     console.log('Item clicked', data);
@@ -136,18 +153,27 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
   getTableDetails() {
-    this.dataTableService.getTablesData().subscribe((response) => {
-      if (response.status === 'S') {
-        this.dataTableDetails = response;
-      }
-      console.log('dataTableDetails', this.dataTableDetails);
-    });
+    if (this.updateTimeService.updTime > -1) {
+      this.interval = setInterval(() => {
+        this.dataTableService.getTablesData().subscribe((response) => {
+          if (response.status === 'S') {
+            this.dataTableDetails = response;
+          } else {
+            console.log('что-то пошло не так');
+          }
+        });
+        console.log('update', this.updateTimeService.updTime);
+      }, this.updateTimeService.updTime);
+
+    } else {
+      clearInterval(this.interval);
+      console.log('clearInterval');
+    }
   }
 
   toggleTable(btn, table) {
-    if ( !btn.classList.contains('open') ) {
+    if (!btn.classList.contains('open')) {
       table.classList.add('show');
       btn.classList.add('open');
     } else {
@@ -156,4 +182,8 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  checkedChbx() {
+    const checkboxSelected = document.getElementsByClassName('selected');
+    this.checkedCheckboxLength = checkboxSelected.length;
+  }
 }
