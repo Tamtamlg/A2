@@ -6,9 +6,10 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { HistoryPageComponent } from './history-page/history-page.component';
 import { PlanningPageComponent } from './planning-page/planning-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
+import { AuthGuard } from '../shared/services/auth.guard';
 
 const routes: Routes = [
-  {path: 'system', component: SystemComponent, children: [
+  {path: 'system', component: SystemComponent, canActivate: [AuthGuard], children: [
     {path: 'dashboard', component: DashboardPageComponent},
     {path: 'history', component: HistoryPageComponent},
     {path: 'planning', component: PlanningPageComponent},

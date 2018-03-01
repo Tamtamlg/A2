@@ -126,16 +126,16 @@
   .star:before {
     content: "\2606";
     visibility: visible;
-    color: #304ffe;
+    color: #52bcd3;
     position: absolute;
-    top: -2px;
+    top: -5px;
     left: -3px;
     font-size: 26px;
   }
   
   .star:checked:before {
     content: "\2605";
-    color: #304ffe;
+    color: #52bcd3;
   }
   
   .fa-area-chart {

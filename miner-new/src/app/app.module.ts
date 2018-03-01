@@ -13,6 +13,9 @@ import { DashboardService } from './system/shared/services/dashboard.service';
 import { UpdateTimeService } from './system/shared/services/update-time.service';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthDataService } from './shared/services/auth-data.service';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AuthGuard } from './shared/services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     SystemModule
   ],
-  providers: [UsersService,
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    UsersService,
     AuthService,
+    AuthGuard,
+    AuthDataService,
     DashboardService,
     UpdateTimeService],
   bootstrap: [AppComponent]
