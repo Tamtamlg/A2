@@ -1,0 +1,1117 @@
+<!-- <div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-body card-widget">
+          <div class="widget-icon rounded-circle bg-blue text-white icon icon-basic-server2">
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              4500
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Total</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-body card-widget">
+          <div class="widget-icon rounded-circle bg-green text-white icon icon-arrows-check">
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              4400
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Active</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="card card-body card-widget">
+          <div class="widget-icon rounded-circle bg-teal text-white icon icon-basic-ban">
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              50
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Inactive</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <a role="button" class="card card-body card-widget" (click)="openAlarmModal(alarm)">
+          <div class="widget-icon rounded-circle bg-red text-white">!
+          </div>
+          <div class="block ml-3">
+            <h5 class="mb-0 fw-400">
+              50
+            </h5>
+            <span class="text-muted text-uppercase ">
+              <strong>Alarm</strong>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          <div class="card-title">
+            Alarm messages
+          </div>
+        </div>
+      </div>
+      <div class="mb-1" *ngIf="!isLoaded">Loading...</div>
+      <div class="mb-1" *ngIf="isLoaded">
+        <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
+          [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
+          [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
+          [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis" [yAxisLabel]="yAxisLabel"
+          class="line-container" [timeline]="timeline">
+        </ngx-charts-line-chart>
+      </div>
+      <div class="table-responsive p-1">
+        <table class="table table-bordered text-center mb-0 table-sm">
+          <thead>
+            <tr>
+              <th>
+                15 min
+              </th>
+              <th>
+                1 hour
+              </th>
+              <th>
+                24 hour
+              </th>
+              <th>
+                Current
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                1 325
+              </td>
+              <td>
+                4 500
+              </td>
+              <td>
+                84 532
+              </td>
+              <td>
+                15 532
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          <div class="card-title">
+            Average hashrate TH/s
+          </div>
+        </div>
+      </div>
+      <div class="mb-1" *ngIf="!isLoaded">Loading...</div>
+      <div class="mb-1" *ngIf="isLoaded">
+        <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
+          [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
+          [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
+          [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis" [yAxisLabel]="yAxisLabel"
+          class="line-container">
+        </ngx-charts-line-chart>
+      </div>
+      <div class="table-responsive p-1">
+        <table class="table table-bordered text-center mb-0 table-sm">
+          <thead>
+            <tr>
+              <th>
+                15 min
+              </th>
+              <th>
+                1 hour
+              </th>
+              <th>
+                24 hour
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                1 325
+              </td>
+              <td>
+                4 500
+              </td>
+              <td>
+                84 532
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header no-shadow">
+        <div class="card-header-text w-100">
+          <div class="card-title">
+            Alive
+          </div>
+        </div>
+      </div>
+      <div class="mb-1" *ngIf="!isLoaded">Loading...</div>
+      <div class="mb-1" *ngIf="isLoaded">
+        <ngx-charts-line-chart (legendlabelclick)="onLegendLabelClick($event)" (select)="select($event)" [curve]="curve" [gradient]="gradient"
+          [legend]="showLegend" [results]="dateData" [roundDomains]="roundDomains" [scheme]="colorScheme" [schemeType]="schemeType"
+          [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [timeline]="timeline"
+          [tooltipDisabled]="tooltipDisabled" [xAxis]="showXAxis" [xAxisLabel]="xAxisLabel" [yAxis]="showYAxis" [yAxisLabel]="yAxisLabel"
+          class="line-container">
+        </ngx-charts-line-chart>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="row">
+  <div class="col-lg-12">
+
+    <button type="button" class="btn btn-outline-dark mb-2">Export CSV</button>
+
+    <form class="card filtersFomr">
+      <div class="card-header">
+        <h5 class="mr-3">Filter</h5>
+        <div>
+          <label class="custom-control custom-radio">
+            <input id="radio1" name="radio" type="radio" class="custom-control-input" checked>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">All</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio2" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Active</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio3" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Inactive</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio4" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Alarm</span>
+          </label>
+          <label class="custom-control custom-radio">
+            <input id="radio5" name="radio" type="radio" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">Favourites</span>
+          </label>
+        </div>
+
+        <div class="input-wrapper mr-3">
+          <input [(ngModel)]="selectedMoments" [selectMode]="'range'" [owlDateTimeTrigger]="dtPicker3" [owlDateTime]="dtPicker3" name="filterDates"
+            class="form-control d-inline-block">
+          <span class="trigger" [owlDateTimeTrigger]="dtPicker3">
+            <i class="icon icon-basic-calendar"></i>
+          </span>
+          <owl-date-time #dtPicker3></owl-date-time>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Apply</button>
+
+        <button type="button" class="btn btn-outline-dark toggle-filter mr-1" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed">
+          <span *ngIf="!isCollapsed">
+            <i class="fa fa-angle-down"></i> Expand</span>
+          <span *ngIf="isCollapsed">
+            <i class="fa fa-angle-up"></i> Collapse</span>
+        </button>
+
+      </div>
+      <div class="card-body">
+
+        <div id="collapseExample" [ngbCollapse]="!isCollapsed">
+          <div class="card">
+
+            <div class="row">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
+                <div class="mt-auto">
+                  <input type="text" class="form-control d-inline-block w-auto" placeholder="Hostname">
+                </div>
+              </div>
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
+                <h6>Type</h6>
+                <div class="mt-auto">
+                  <angular2-multiselect [data]="itemList" [(ngModel)]="selectedItems" [settings]="settings" name="multiselectType">
+                  </angular2-multiselect>
+                </div>
+              </div>
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
+                <h6>Clock</h6>
+                <div class="mt-auto">
+                  <label class="custom-control custom-radio">
+                    <input id="clockRadio1" name="clockRadio" type="radio" class="custom-control-input" checked>
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">&gt;=</span>
+                  </label>
+                  <label class="custom-control custom-radio">
+                    <input id="clockRadio2" name="clockRadio" type="radio" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">&lt;=</span>
+                  </label>
+                  <input type="text" class="form-control d-inline-block w-auto" placeholder="Clock value">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
+                <h6>Device</h6>
+                <div class="mt-auto">
+                  <input type="text" class="form-control d-inline-block w-auto" placeholder="ID">
+                </div>
+              </div>
+
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
+                <h6>HashRate</h6>
+                <div class="mt-auto">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" checked>
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">15 min</span>
+                  </label>
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">1 Hour</span>
+                  </label>
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">AVG</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
+                <div class="mt-auto">
+                  <label class="custom-control custom-radio">
+                    <input id="hashrateRadio1" name="hashrateRadio" type="radio" class="custom-control-input" checked>
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">&gt;=</span>
+                  </label>
+                  <label class="custom-control custom-radio">
+                    <input id="hashrateRadio2" name="hashrateRadio" type="radio" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">&lt;=</span>
+                  </label>
+                  <input type="text" class="form-control d-inline-block w-auto" placeholder="TH/s">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-8 d-flex flex-column pt-2 pb-2">
+                <h6>Alarm</h6>
+                <div class="mt-auto">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">U alarm</span>
+                  </label>
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">I alarm</span>
+                  </label>
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">T alarm</span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-4 d-flex flex-column pt-2 pb-2">
+                <h6>ASIC's</h6>
+                <div class="mt-auto">
+                  <label class="custom-control custom-radio">
+                    <input id="asicRadio1" name="asicRadio" type="radio" class="custom-control-input" checked>
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">&gt;=</span>
+                  </label>
+                  <label class="custom-control custom-radio">
+                    <input id="asicRadio2" name="asicRadio" type="radio" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">&lt;=</span>
+                  </label>
+                  <input type="text" class="form-control d-inline-block w-auto" placeholder="TH/s">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="row">
+    <div class="col">
+      <div class="card w-100">
+        <div class="table-responsive">
+          <table class="table table-sm dashboard-table">
+            <thead>
+              <tr>
+                <th class="checkbox-wrap">
+                  <label class="custom-control custom-checkbox">
+                    <input type="checkbox" #mainCheckbox class="custom-control-input main-checkbox checkbox" (change)="checkAll(mainCheckbox)">
+                    <span class="custom-control-indicator"></span>
+                  </label>
+                </th>
+                <th class="toggler" #mainToggler (click)="onToggle()" title="Show all" [ngClass]="{'open': openAll}">
+                  <i class="fa fa-angle-down show-all-table" aria-hidden="true"></i>
+                </th>
+                <th class="td-name">
+                  HostName
+                </th>
+                <th class="td-type">
+                  Type
+                </th>
+                <th class="td-hashrate">
+                  15MIN
+                </th>
+                <th class="td-hashrate">
+                  1H
+                </th>
+                <th class="td-hashrate">
+                  1D
+                </th>
+                <th class="td-hashrate">
+                  AVG
+                </th>
+                <th class="td-clock">
+                  Clock
+                </th>
+                <th class="td-build">
+                  Build
+                </th>
+                <th class="td-date">
+                  Date/time
+                </th>
+                <th class="td-alarms">
+                  Alarms
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-template ngFor let-item [ngForOf]="dataTableDetails.level1" let-i="index" [ngForTrackBy]="trackById">
+                <tr [ngClass]="{'alarm-backlight': dataTableDetails.level1[i].alarmItem, 'warning-backlight': dataTableDetails.level1[i].warningItem, 'critical-backlight': dataTableDetails.level1[i].criticalItem}">
+                  <td scope="row" class="checkbox-wrap">
+                    <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input check checkbox" [(ngModel)]="dataTableDetails.level1[i].checked" #cb (change)="checkedChbx(cb)"
+                        [class.selected]="cb.checked" id="{{item.checkboxId}}">
+                      <span class="custom-control-indicator"></span>
+                    </label>
+                  </td>
+                  <td class="toggler" #btn2 (click)="toggleTable2(btn2, innerRow2, cb)" [ngClass]="{'open': openAll || dataTableDetails.level1[i].opened}">
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                  </td>
+                  <td title="HostName">
+                    <label>
+                      <input class="star mr-2" type="checkbox" title="Add to favourites" #fav1 (change)="showFavouriteMsg(fav1)">{{item.hostName}}
+                    </label>
+                    <a href="#" class="area-chart-link" title="View chart">
+                      <i class="fa fa-bar-chart ml-1"></i>
+                    </a>
+                  </td>
+                  <td title="Type">
+                    {{item.type}}
+                  </td>
+                  <td title="HashRate, 15MIN">
+                    {{item.hashrateMin}}
+                  </td>
+                  <td title="HashRate, 1H">
+                    {{item.hashrateHour}}
+                  </td>
+                  <td title="HashRate, 1D">
+                    {{item.hashrateDay}}
+                  </td>
+                  <td title="HashRate, AVG">
+                    {{item.avg}}
+                  </td>
+                  <td title="Clock">
+                    {{item.clock}}
+                  </td>
+                  <td title="Build">
+                    {{item.build}}
+                  </td>
+                  <td title="Date/Time">
+                    {{item.dateTime}}
+                  </td>
+                  <td title="Alarms">
+                    {{item.alarms}}
+                  </td>
+                </tr>
+  
+                <tr class="no-border" [ngClass]="{'alarm-backlight': dataTableDetails.level1[i].alarmItem, 'warning-backlight': dataTableDetails.level1[i].warningItem, 'critical-backlight': dataTableDetails.level1[i].criticalItem}">
+                  <td scope="row" class="checkbox-wrap"></td>
+                  <td class="toggler"></td>
+                  <td>
+                    <strong>Pool 1:&nbsp;</strong> {{item.pool1}}
+                  </td>
+                  <td colspan="6">
+                    <strong>User 1:&nbsp;</strong>
+                    <span class="hovered-text" ngbTooltip="{{item.user1}}" (click)="copyToClipboard(user1)">{{item.user1 | wfmClipPipe}}</span>
+                    <span class="hidden-text" #user1>{{item.user1}}</span>
+                  </td>
+  
+                  <td>
+                    <strong>Ver:&nbsp;</strong> {{item.ver}}
+                  </td>
+                  <td>
+                    <strong>Pwr:&nbsp;</strong> {{item.pwr}}
+                  </td>
+                  <td>
+                    <strong>El:&nbsp;</strong> {{item.el}}
+                  </td>
+                </tr>
+                <tr class="no-border tr-pools" [ngClass]="{'alarm-backlight': dataTableDetails.level1[i].alarmItem, 'warning-backlight': dataTableDetails.level1[i].warningItem, 'critical-backlight': dataTableDetails.level1[i].criticalItem, 'shown': openAll || isLevelOpened(btn2)}">
+                  <td scope="row" class="checkbox-wrap"></td>
+                  <td class="toggler"></td>
+                  <td>
+                    <strong>Pool 2:&nbsp;</strong> {{item.pool2}}
+                  </td>
+                  <td colspan="6">
+                    <strong>User 2:&nbsp;</strong>
+                    <span class="hovered-text" ngbTooltip="{{item.user2}}" (click)="copyToClipboard(user2)">{{item.user2 | wfmClipPipe}}</span>
+                    <span class="hidden-text" #user2>{{item.user2}}</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr class="no-border tr-pools" [ngClass]="{'alarm-backlight': dataTableDetails.level1[i].alarmItem, 'warning-backlight': dataTableDetails.level1[i].warningItem, 'critical-backlight': dataTableDetails.level1[i].criticalItem, 'shown': openAll || isLevelOpened(btn2)}">
+                  <td scope="row" class="checkbox-wrap"></td>
+                  <td class="toggler"></td>
+                  <td>
+                    <strong>Pool 3:&nbsp;</strong> {{item.pool3}}
+                  </td>
+                  <td colspan="6">
+                    <strong>User 3:&nbsp;</strong>
+                    <span class="hovered-text" ngbTooltip="{{item.user3}}" (click)="copyToClipboard(user3)">{{item.user3 | wfmClipPipe}}</span>
+                    <span class="hidden-text" #user3>{{item.user3}}</span>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+  
+                <tr [ngClass]="{'alarm-backlight': dataTableDetails.level1[i].alarmItem, 'warning-backlight': dataTableDetails.level1[i].warningItem, 'critical-backlight': dataTableDetails.level1[i].criticalItem}">
+                  <td style="border: 0"></td>
+                  <td colspan="11" style="border: 0">
+                    <div class="table-responsive table-wrap">
+  
+                      <table class="table table-sm dashboard-table-2 table-secondary inner-section show" #innerRow2 [ngClass]="{'show': openAll || dataTableDetails.level1[i].opened}">
+                        <thead>
+                          <tr>
+                            <th class="toggler">
+  
+                            </th>
+                            <th>
+                              Name
+                            </th>
+                            <th>
+                              Boards
+                            </th>
+                            <th>
+                              15MIN
+                            </th>
+                            <th>
+                              1H
+                            </th>
+                            <th>
+                              1D
+                            </th>
+                            <th>
+                              AVG
+                            </th>
+                            <th>
+                              Pwr, KW
+                            </th>
+                            <th>
+                              El, kWh
+                            </th>
+                            <th>
+                              Version
+                            </th>
+                            <th>
+                              Uptime
+                            </th>
+                            <th>
+                              Alarms
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <ng-template ngFor let-item [ngForOf]="dataTableDetails.level1[i].level2" let-j="index">
+                            <tr>
+                              <td class="toggler" #btn (click)="toggleTable(btn, innerRow, cb, j)" [ngClass]="{'open': openAll || dataTableDetails.level1[i].level2[j].opened}">
+                                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                              </td>
+                              <td title="Name">
+                                {{item.name}}
+                                <a href="#" class="area-chart-link" title="View chart">
+                                  <i class="fa fa-bar-chart ml-1"></i>
+                                </a>
+                              </td>
+                              <td title="Boards">
+                                {{item.boards}}
+                              </td>
+                              <td title="HashRate, 15MIN">
+                                {{item.hashrateMin}}
+                              </td>
+                              <td title="HashRate, 1H">
+                                {{item.hashrateHour}}
+                              </td>
+                              <td title="HashRate, 1D">
+                                {{item.hashrateDay}}
+                              </td>
+                              <td title="HashRate, AVG">
+                                {{item.avg}}
+                              </td>
+                              <td title="Pwr, KW">
+                                {{item.pwr}}
+                              </td>
+                              <td title="El, kWh">
+                                {{item.el}}
+                              </td>
+                              <td title="Version">
+                                {{item.version}}
+                              </td>
+                              <td title="Uptime">
+                                {{item.uptime}}
+                              </td>
+                              <td title="Alarms">
+                                {{item.alarms}}
+                              </td>
+                            </tr>
+  
+                            <tr class="inner-section" #innerRow [ngClass]="{'show': openAll || dataTableDetails.level1[i].level2[j].opened}">
+                              <td style="border: 0"></td>
+                              <td colspan="11" style="border: 0">
+                                <div class="table-responsive table-wrap">
+                                  <table class="table table-sm dashboard-table-3">
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          ID
+                                        </th>
+                                        <th>
+                                          ASIC Status
+                                        </th>
+                                        <th>
+                                          ASIC#
+                                        </th>
+                                        <th>
+                                          15MIN
+                                        </th>
+                                        <th>
+                                          1H
+                                        </th>
+                                        <th>
+                                          1D
+                                        </th>
+                                        <th>
+                                          AVG
+                                        </th>
+                                        <th>
+                                          Version
+                                        </th>
+                                        <th>
+                                          Alarms
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <ng-template ngFor let-item [ngForOf]="dataTableDetails.level1[i].level2[j].level3" let-i="index">
+                                        <tr>
+                                          <td title="ID">
+                                            <label>
+                                              <input class="star mr-2" type="checkbox" title="Add to favourites" #fav3 (change)="showFavouriteMsg(fav3)"> {{item.id}}
+                                            </label>
+                                          </td>
+                                          <td class="asic-status" title="ASIC Status">
+                                            {{item.status}}
+                                          </td>
+                                          <td title="ASIC#">
+                                            {{item.asic}}
+                                          </td>
+                                          <td title="HashRate, 15MIN">
+                                            {{item.hashrateMin}}
+                                          </td>
+                                          <td title="HashRate, 1H">
+                                            {{item.hashrateHour}}
+                                          </td>
+                                          <td title="HashRate, 1D">
+                                            {{item.hashrateDay}}
+                                          </td>
+                                          <td title="HashRate, AVG">
+                                            {{item.avg}}
+                                          </td>
+                                          <td title="Version">
+                                            {{item.version}}
+                                          </td>
+                                          <td title="Alarms">
+                                            {{item.alarms}}
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td></td>
+                                          <td class="text-right pr-3">
+                                            <strong>T:</strong> {{item.t}}
+                                          </td>
+                                          <td>
+                                            <strong>U:</strong> {{item.u}}
+                                          </td>
+                                          <td colspan="2">
+                                            <strong>I1 / I2:</strong>{{item.i}}
+                                          </td>
+                                          <td colspan="2">
+                                            <strong>FAN:</strong> {{item.fan}}
+                                          </td>
+                                          <td>
+                                            <strong>P:</strong> {{item.p}}
+                                          </td>
+                                          <td>
+                                            <strong>Ver:</strong> {{item.ver}}
+                                          </td>
+                                        </tr>
+                                      </ng-template>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </td>
+                            </tr>
+                          </ng-template>
+                        </tbody>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </ng-template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row clearfix">
+    <div class="col group-action d-flex align-items-baseline">
+      <div ngbDropdown placement="top-left" class="d-inline-block mr-3">
+        <button class="btn btn-outline-dark group-action-btn" ngbDropdownToggle [disabled]="isDisabledGroupAction()">Group action</button>
+        <div ngbDropdownMenu>
+          <button class="dropdown-item">
+            <i class="fa fa-align-left mr-1"></i> Get log</button>
+          <button class="dropdown-item" (click)="openChangePoolModal(changePool)">
+            <i class="fa fa-random mr-1"></i> Change pools</button>
+          <button class="dropdown-item" (click)="openChangeClockModal(changeClock)">
+            <i class="fa fa-clock-o mr-1"></i> Change clock settings</button>
+          <button class="dropdown-item" (click)="openRestartModal(restart)">
+            <i class="fa fa-rotate-left mr-1"></i> Cgminer restart</button>
+          <button class="dropdown-item" (click)="openRebootModal(reboot)">
+            <i class="fa fa-rotate-right mr-1"></i> Device reboot</button>
+          <button class="dropdown-item">
+            <i class="fa fa-bar-chart mr-1"></i> Show charts</button>
+        </div>
+      </div>
+      <p class="mb-0" *ngIf="checkedCheckboxLength">You have selected {{checkedCheckboxLength}}
+        <span *ngIf="checkedCheckboxLength < 2">item</span>
+        <span *ngIf="checkedCheckboxLength > 1">items</span>
+      </p>
+    </div>
+  </div>
+  
+  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null" class="success-clipboard">{{ successMessage }}</ngb-alert>
+  
+  <!-- ************************************************** MODAL ********************************************************************** -->
+  <!-- change pool modal -->
+  <ng-template ngbModalContainer></ng-template>
+  <ng-template #changePool let-c="close" let-d="dismiss" id="changePool">
+    <div class="modal-header">
+      <h6 class="modal-title">Change pool ({{checkedCheckboxLength}} <span *ngIf="checkedCheckboxLength < 2">host</span><span *ngIf="checkedCheckboxLength > 1">hosts</span>)</h6>
+      <button type="button" class="minimize fa fa-compress" aria-label="minimize" (click)="minimizeModal()"></button>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')" [disabled]="showLoader">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="changePoolForm" (ngSubmit)="groupAction(poolLog, 'changepool')" class="change-pool-form">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Pool 1
+                <i class="required-field">*</i>
+              </label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'pool1'" [ngClass]="{'form-control-danger': changePoolForm.get('pool1').invalid && changePoolForm.get('pool1').touched}">
+              <div class="form-control-feedback" *ngIf="changePoolForm.get('pool1').invalid && changePoolForm.get('pool1').touched">This field is required</div>
+            </div>
+            <div class="form-group">
+              <label>Pool 2</label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'pool2'">
+            </div>
+            <div class="form-group">
+              <label>Pool 3</label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'pool3'">
+            </div>
+          </div>
+  
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>User 1
+                <i class="required-field">*</i>
+              </label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'user1'" [ngClass]="{'form-control-danger': changePoolForm.get('user1').invalid && changePoolForm.get('user1').touched}">
+              <div class="form-control-feedback" *ngIf="changePoolForm.get('user1').invalid && changePoolForm.get('user1').touched">This field is required</div>
+            </div>
+            <div class="form-group">
+              <label>User 2</label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'user2'">
+            </div>
+            <div class="form-group">
+              <label>User 3</label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'user3'">
+            </div>
+          </div>
+  
+          <div class="col-md-4">
+            <div class="form-group">
+              <label>Password 1
+                <i class="required-field">*</i>
+              </label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'password1'" [ngClass]="{'form-control-danger': changePoolForm.get('password1').invalid && changePoolForm.get('password1').touched}">
+              <div class="form-control-feedback" *ngIf="changePoolForm.get('password1').invalid && changePoolForm.get('password1').touched">This field is required</div>
+            </div>
+            <div class="form-group">
+              <label>Password 2</label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'password2'">
+            </div>
+            <div class="form-group">
+              <label>Password 3</label>
+              <input type="text" class="form-control" placeholder="" [formControlName]="'password3'">
+            </div>
+          </div>
+        </div>
+        <div class="mt-1 d-flex align-items-center">
+          <button type="submit" class="btn btn-primary mr-2" [disabled]="!changePoolForm.valid || showLoader">Confirm</button>
+          <button type="button" class="btn btn-secondary mr-2" (click)="c('Close click'); showModal=false" [disabled]="showLoader">Cancel</button>
+          <button type="button" class="btn btn-link mr-2" (click)="isCollapsedPoolLog = !isCollapsedPoolLog" [attr.aria-expanded]="!isCollapsedPoolLog"
+            [disabled]="!showLoader && !requestStatus">
+            <span *ngIf="!isCollapsedPoolLog">Show log</span>
+            <span *ngIf="isCollapsedPoolLog">Hide log</span>
+          </button>
+  
+          <div class="ml-auto d-flex align-items-center" *ngIf="showLoader">
+            <div class="loader"></div>
+            <span class="ml-2">Please wait...</span>
+          </div>
+  
+          <div class="failed ml-auto" *ngIf="!showLoader && requestStatus === 'error'">
+            <i class="fa fa-ban mr-2"></i>
+            Operation failed
+          </div>
+  
+          <div class="success ml-auto" *ngIf="!showLoader && requestStatus === 'success'">
+            <i class="fa fa-check mr-2"></i>
+            Operation success
+          </div>
+  
+        </div>
+      </form>
+      <div id="collapsedPoolLog" [ngbCollapse]="!isCollapsedPoolLog">
+        <div class="card-log mt-3 p-2">
+          <div class="log-wrapper" id="poolLog">
+            <pre #poolLog class="mb-0"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  <!-- change clock modal -->
+  <ng-template #changeClock let-c="close" let-d="dismiss" id="changeClock">
+    <div class="modal-header">
+      <h6 class="modal-title">Change clock settings ({{checkedCheckboxLength}} <span *ngIf="checkedCheckboxLength < 2">host</span><span *ngIf="checkedCheckboxLength > 1">hosts</span>)</h6>
+      <button type="button" class="minimize fa fa-compress" aria-label="minimize" (click)="minimizeModal()"></button>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click');" [disabled]="showLoader">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="changeClockForm" (ngSubmit)="groupAction(clockLog, 'changeclock')" class="change-clock-form">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Frequency</label>
+              <select class="form-control" [formControlName]="'clock'" [(ngModel)]="selectedFrequency">
+                <option *ngFor="let prop of frequency" [value]="prop.value" [selected]="prop.value == selectedFrequency">{{prop.content}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="mt-1 d-flex align-items-center">
+          <button type="submit" class="btn btn-primary mr-2" [disabled]="showLoader">Confirm</button>
+          <button type="button" class="btn btn-secondary mr-2" (click)="c('Close click'); showModal=false" [disabled]="showLoader">Cancel</button>
+          <button type="button" class="btn btn-link mr-2" (click)="isCollapsedClockLog = !isCollapsedClockLog" [attr.aria-expanded]="!isCollapsedClockLog"
+            [disabled]="!showLoader && !requestStatus">
+            <span *ngIf="!isCollapsedClockLog">Show log</span>
+            <span *ngIf="isCollapsedClockLog">Hide log</span>
+          </button>
+  
+          <div class="ml-auto d-flex align-items-center" *ngIf="showLoader">
+            <div class="loader"></div>
+            <span class="ml-2">Please wait...</span>
+          </div>
+  
+          <div class="failed ml-auto" *ngIf="!showLoader && requestStatus === 'error'">
+            <i class="fa fa-ban mr-2"></i>
+            Operation failed
+          </div>
+  
+          <div class="success ml-auto" *ngIf="!showLoader && requestStatus === 'success'">
+            <i class="fa fa-check mr-2"></i>
+            Operation success
+          </div>
+  
+        </div>
+      </form>
+      <div id="collapseClockLog" [ngbCollapse]="!isCollapsedClockLog">
+        <div class="card-log mt-3 p-2">
+          <div class="log-wrapper" id="clockLog">
+            <pre #clockLog class="mb-0"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  <!-- restart modal -->
+  <ng-template #restart let-c="close" let-d="dismiss" id="restart">
+    <div class="modal-header">
+      <h6 class="modal-title">Cgminer restart ({{checkedCheckboxLength}} <span *ngIf="checkedCheckboxLength < 2">host</span><span *ngIf="checkedCheckboxLength > 1">hosts</span>)</h6>
+      <button type="button" class="minimize fa fa-compress" aria-label="minimize" (click)="minimizeModal()"></button>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click');" [disabled]="showLoader">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="restartForm" (ngSubmit)="groupAction(restartLog, 'cgminerrestart')" class="change-clock-form">
+        <div class="row">
+          <div class="col">
+            <p>Please confirm this action</p>
+          </div>
+        </div>
+        <div class="mt-1 d-flex align-items-center">
+          <button type="submit" class="btn btn-primary mr-2" [disabled]="showLoader">Confirm</button>
+          <button type="button" class="btn btn-secondary mr-2" (click)="c('Close click'); showModal=false" [disabled]="showLoader">Cancel</button>
+          <button type="button" class="btn btn-link mr-2" (click)="isCollapsedRestartLog = !isCollapsedRestartLog" [attr.aria-expanded]="!isCollapsedRestartLog"
+            [disabled]="!showLoader && !requestStatus">
+            <span *ngIf="!isCollapsedRestartLog">Show log</span>
+            <span *ngIf="isCollapsedRestartLog">Hide log</span>
+          </button>
+  
+          <div class="ml-auto d-flex align-items-center" *ngIf="showLoader">
+            <div class="loader"></div>
+            <span class="ml-2">Please wait...</span>
+          </div>
+  
+          <div class="failed ml-auto" *ngIf="!showLoader && requestStatus === 'error'">
+            <i class="fa fa-ban mr-2"></i>
+            Operation failed
+          </div>
+  
+          <div class="success ml-auto" *ngIf="!showLoader && requestStatus === 'success'">
+            <i class="fa fa-check mr-2"></i>
+            Operation success
+          </div>
+  
+        </div>
+      </form>
+      <div id="collapsedRestartLog" [ngbCollapse]="!isCollapsedRestartLog">
+        <div class="card-log mt-3 p-2">
+          <div class="log-wrapper" id="restartLog">
+            <pre #restartLog class="mb-0"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  
+  <!-- reboot modal -->
+  <ng-template #reboot let-c="close" let-d="dismiss" id="restart">
+    <div class="modal-header">
+      <h6 class="modal-title">Device reboot ({{checkedCheckboxLength}} <span *ngIf="checkedCheckboxLength < 2">host</span><span *ngIf="checkedCheckboxLength > 1">hosts</span>)</h6>
+      <button type="button" class="minimize fa fa-compress" aria-label="minimize" (click)="minimizeModal()"></button>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click');" [disabled]="showLoader">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="restartForm" (ngSubmit)="groupAction(rebootLog, 'devicereboot')" class="change-clock-form">
+        <div class="row">
+          <div class="col">
+            <p>Please confirm this action</p>
+          </div>
+        </div>
+        <div class="mt-1 d-flex align-items-center">
+          <button type="submit" class="btn btn-primary mr-2" [disabled]="showLoader">Confirm</button>
+          <button type="button" class="btn btn-secondary mr-2" (click)="c('Close click'); showModal=false" [disabled]="showLoader">Cancel</button>
+          <button type="button" class="btn btn-link mr-2" (click)="isCollapsedRebootLog = !isCollapsedRebootLog" [attr.aria-expanded]="!isCollapsedRebootLog"
+            [disabled]="!showLoader && !requestStatus">
+            <span *ngIf="!isCollapsedRebootLog">Show log</span>
+            <span *ngIf="isCollapsedRebootLog">Hide log</span>
+          </button>
+  
+          <div class="ml-auto d-flex align-items-center" *ngIf="showLoader">
+            <div class="loader"></div>
+            <span class="ml-2">Please wait...</span>
+          </div>
+  
+          <div class="failed ml-auto" *ngIf="!showLoader && requestStatus === 'error'">
+            <i class="fa fa-ban mr-2"></i>
+            Operation failed
+          </div>
+  
+          <div class="success ml-auto" *ngIf="!showLoader && requestStatus === 'success'">
+            <i class="fa fa-check mr-2"></i>
+            Operation success
+          </div>
+  
+        </div>
+      </form>
+      <div id="collapsedRebootLog" [ngbCollapse]="!isCollapsedRebootLog">
+        <div class="card-log mt-3 p-2">
+          <div class="log-wrapper" id="rebootLog">
+            <pre #rebootLog class="mb-0"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!-- ************************************************************************************************************************ -->
+  
+  <!-- alert modal -->
+  <!-- <ng-template ngbModalContainer></ng-template>
+  <ng-template #alarm let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h6 class="modal-title">Alarm (50 hosts)</h6>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body alarm-modal-body">
+      <div class="table-responsive">
+        <table class="table table-bordered table-sm table-hover mb-0">
+          <thead>
+            <tr>
+              <th>DeviceID</th>
+              <th>Date / Time</th>
+              <th>Alarm Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+            <tr>
+              <td>23423</td>
+              <td>12.12.2018 / 15:15:45</td>
+              <td>Alarm Type 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template> -->
+  
+  <button type="button" class="btn btn-primary modal-minimize" title="Show modal" [ngClass]="{'hide': minimizeBtnHide}" (click)="showMinimezedModal()">
+    <div class="d-flex align-items-center" *ngIf="showLoader">
+      <div class="loader"></div>
+    </div>
+  
+    <div class="failed" *ngIf="!showLoader && requestStatus === 'error'">
+      <i class="fa fa-ban"></i>
+    </div>
+  
+    <div class="success" *ngIf="!showLoader && requestStatus === 'success'">
+      <i class="fa fa-check"></i>
+    </div>
+  
+    <div class="success" *ngIf="!showLoader && !requestStatus">
+      <i class="fa fa-expand"></i>
+    </div>
+  </button>

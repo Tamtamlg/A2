@@ -1,0 +1,20 @@
+.sidebar {
+  position: fixed;
+  .metismenu {
+    flex-direction: column;
+  }
+}
+
+.sidebar-header {
+  height: 30px;
+}
+
+.sidebar .nav>li>a i {
+  margin-right: 10px;
+  font-size: 16px;
+  width: 20px;
+}
+
+.sidebar.invisible {
+  left: -230px;
+}

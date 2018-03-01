@@ -1,0 +1,35 @@
+<aside class="sidebar" [ngClass]="{'invisible': !isSidebar}">
+  <div class="sidebar-container">
+    <div class="sidebar-header">
+      <div class="brand">
+        <!-- <div class="logo">
+          <img src="assets/img/logo.svg" alt="Hotmine logo">
+        </div> -->
+      </div>
+    </div>
+    <nav class="menu">
+      <ul class="nav metismenu">
+        <li routerLinkActive="active">
+          <a [routerLink]="['/system', 'dashboard']">
+            <i class="fa fa-tasks"></i>Dashboard</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/system', 'history']">
+            <i class="fa fa-bar-chart"></i>Charts</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/system', 'planning']">
+            <i class="fa fa-align-left"></i>Log</a>
+        </li>
+        <li routerLinkActive="active">
+          <a [routerLink]="['/system', 'records']">
+            <i class="fa fa-user"></i>Profile</a>
+        </li>
+        <li routerLinkActive="active">
+          <a (click)="onLogout()">
+            <i class="fa fa-sign-out"></i> Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

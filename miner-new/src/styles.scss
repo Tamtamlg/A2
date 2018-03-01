@@ -1,0 +1,146 @@
+html, body {
+  font-size: 14px;
+}
+.app.without-sidebar {
+  padding-left: 0;
+}
+
+.header.without-sidebar {
+  left: 0;
+}
+
+.checkbox+span:before, .radio+span:before {
+  color: #373a3c;
+  width: 20px;
+  font-size: 23px;
+  font-weight: normal;
+}
+
+.checkbox+span, .radio+span {
+  padding: 0;
+}
+.custom-control {
+  padding: 0;
+}
+
+.checkbox:checked+span:before, .radio:checked+span:before {
+  color: #304ffe;
+  font-size: 21px;
+}
+
+.custom-navbar .navbar-nav > li > a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.custom-navbar {
+  min-height: auto;
+}
+
+.main-footer {
+  min-height: 30px;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  line-height: normal;
+}
+
+.ng-sidebar__content .main-content > router-outlet + * {
+  padding: 7px;
+}
+
+.ng-sidebar__content .main-content > router-outlet + app-dashboard {
+  padding: 7px 15px;
+}
+
+.card {
+  margin-bottom: 7px;
+}
+
+.selected-list .c-list .c-token {
+  background: #304ffe !important;
+}
+
+.btn-secondary {
+  border-color: #ccc;
+}
+
+.form-control-feedback {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+}
+.form-control-danger {
+  border-color: red;
+}
+.modal-header {
+  align-items: center;
+}
+.modal-header .close,
+.modal-header .fa-compress {
+  cursor: pointer;
+  margin-left: 0;
+  font-size: 2rem;
+  padding: 0 1rem 0 0;
+  &:disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+  &:disabled:hover {
+    opacity: 0.3;
+  }
+}
+
+.modal-header .minimize {
+  font-size: 1.3rem;
+  position: relative;
+  top: 1px;
+  line-height: 1;
+  color: #000;
+  border: none;
+  background: transparent;
+  opacity: 0.5;
+  margin-left: auto;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+.modal-dialog{
+  display: flex;
+  align-items: center;
+}
+.modal-content {
+  width: 100%;
+}
+.modal-title {
+  font-weight: bold;
+}
+@media (min-width: 767px) {
+  .modal-open .modal-dialog {
+    max-width: 700px !important;
+      // min-height: calc(100% - (1.75rem * 2));
+  }
+}
+
+.hide-modal {
+  display: none !important;
+}
+
+.modal.show {
+  button {
+    cursor: pointer;
+    &:disabled {
+      cursor: default;
+    }
+  }
+  .btn-link {
+    color: red;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:disabled:hover {
+      text-decoration: none;
+    }
+  }
+}
