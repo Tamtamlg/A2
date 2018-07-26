@@ -8,7 +8,6 @@ import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersService } from './shared/services/users.service';
 import { AuthService } from './shared/services/auth.service';
-import { SystemModule } from './system/system.module';
 import { DashboardService } from './system/shared/services/dashboard.service';
 import { UpdateTimeService } from './system/shared/services/update-time.service';
 import { FormsModule } from '@angular/forms';
@@ -28,8 +27,7 @@ import { AuthGuard } from './shared/services/auth.guard';
     FormsModule,
     NgbModule.forRoot(),
     AuthModule,
-    AppRoutingModule,
-    SystemModule
+    AppRoutingModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
