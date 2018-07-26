@@ -1,9 +1,0 @@
-<div class="main-wrapper">
-  <div class="app" [ngClass]="{'without-sidebar': !isSidebar}">
-    <wfm-header (toggleSidebar)="toggleSidebar($event)"></wfm-header>
-    <wfm-sidebar [isSidebar]="isSidebar"></wfm-sidebar> <!-- -->
-    <article class="content dashboard-page">
-      <router-outlet></router-outlet>
-    </article>
-  </div>
-</div>
